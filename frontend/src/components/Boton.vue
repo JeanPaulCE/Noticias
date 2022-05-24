@@ -18,7 +18,7 @@ function clicked() {
 @import "../assets/sass/custom.scss";
 button {
   border-style: hidden;
-  border-radius: 1rem;
+  border-radius: 12px;
   height: $spacer;
   padding: 0 calc($spacer/2);
   color: #ffff;

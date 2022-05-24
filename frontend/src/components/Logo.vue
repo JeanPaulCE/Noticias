@@ -10,7 +10,7 @@
 div {
   h1 {
     display: inline-block;
-    font-size: 1.688rem;
+    font-size: 1.7rem;
     color: #fff;
     font-weight: bold;
     span {

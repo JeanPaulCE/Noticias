@@ -1,11 +1,12 @@
 <script setup>
 import Logo from "./components/Logo.vue";
 import BtnsSc from "./layouts/Btns-sc.vue";
+import Nav from "./layouts/Nav.vue";
 </script>
 
 <template>
   <div class="main">
-    <Logo></Logo>
+    <Nav></Nav>
     <BtnsSc></BtnsSc>
   </div>
 </template>
