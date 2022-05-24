@@ -1,14 +1,16 @@
 <script setup>
 import { ref } from "vue";
 import Boton from "../components/Boton.vue";
-const botones = ref(["btn-red", "btn-border", "btn-border"]);
+
+
+const botones = ref([{class:"btn-red",url:""}, {class:"btn-border"}, {class:"btn-border"}]);
 
 function click(btn) {
   for (let index = 0; index < botones.value.length; index++) {
     if (btn == index) {
-      botones.value[index] = "btn-red";
+      botones.value[index][class] = "btn-red";
     } else {
-      botones.value[index] = "btn-border";
+      botones.value[index][class] = "btn-border";
     }
   }
 }
@@ -44,5 +46,3 @@ function click(btn) {
     </div>
   </div>
 </template>
-
-<style lang="scss" scoped></style>

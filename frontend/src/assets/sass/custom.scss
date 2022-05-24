@@ -6,6 +6,15 @@ $font-family-base: "Inter", sans-serif;
 $spacer: 2.5rem; //spacer = 2x mt-1 = 1/2x mt-2 = 1x mt-3=2x
 $font-size-base: 0.75rem;
 
+$primary: #d72626;
+$secondary: #171930;
+$success: $green;
+$info: $cyan;
+$warning: $yellow;
+$danger: #aa2328;
+$light: #171930;
+$dark: #ffffff99;
+
 // root
 :root {
   --red: #d72626;

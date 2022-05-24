@@ -1,13 +1,13 @@
 <script setup>
 import Logo from "./components/Logo.vue";
-import BtnsSc from "./layouts/Btns-sc.vue";
+import Btn from "./layouts/ButonGroup.vue";
 import Nav from "./layouts/Nav.vue";
 </script>
 
 <template>
   <div class="main">
     <Nav></Nav>
-    <BtnsSc></BtnsSc>
+    <Btn></Btn>
   </div>
 </template>
 
