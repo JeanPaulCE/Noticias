@@ -1,19 +1,19 @@
 <script setup>
-import { ref } from 'vue'
-import Nav from './layouts/Nav.vue';
-
-const count = ref(0);
-function addCount() {
-  count.value++;
-}
+import Logo from "./components/Logo.vue";
+import BtnsSc from "./layouts/Btns-sc.vue";
 </script>
 
 <template>
-	<Nav />
-  <button @click="addCount" class="btn btn-light">Add</button>
-  {{ count }}
+  <div class="main">
+    <Logo></Logo>
+    <BtnsSc></BtnsSc>
+  </div>
 </template>
 
 <style lang="scss" scoped>
-
+.main {
+  background: var(--bg);
+  height: 100vh;
+  overflow-y: scroll;
+}
 </style>
