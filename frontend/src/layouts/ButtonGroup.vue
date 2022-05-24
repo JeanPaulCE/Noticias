@@ -1,19 +1,19 @@
 <script setup>
 import { ref } from "vue";
-import Boton from "../components/Boton.vue";
+import Button from "../components/Button.vue";
 
-const botones = ref([
+const buttons = ref([
   { class: "btn-red" },
   { class: "btn-border" },
   { class: "btn-border" },
 ]);
 
-function click(btn) {
-  for (let index = 0; index < botones.value.length; index++) {
-    if (btn == index) {
-      botones.value[index].class = "btn-red";
+function click(btnIndex) {
+  for (let index = 0; index < buttons.value.length; index++) {
+    if (btnIndex == index) {
+      buttons.value[index].class = "btn-red";
     } else {
-      botones.value[index].class = "btn-border";
+      buttons.value[index].class = "btn-border";
     }
   }
 }
@@ -21,31 +21,31 @@ function click(btn) {
 <template>
   <div class="row mx-1 gx-2">
     <div class="col">
-      <Boton
+      <Button
         @click="click(0)"
         class="w-100"
         msg="Para ti"
-        :type="botones[0].class"
+        :type="buttons[0].class"
         url="dir"
-      ></Boton>
+      />
     </div>
     <div class="col">
-      <Boton
+      <Button
         @click="click(1)"
         class="w-100"
         msg="Popular"
-        :type="botones[1].class"
+        :type="buttons[1].class"
         url="dir"
-      ></Boton>
+      />
     </div>
     <div class="col">
-      <Boton
+      <Button
         @click="click(2)"
         class="w-100"
         msg="Reciente"
-        :type="botones[2].class"
+        :type="buttons[2].class"
         url="dir"
-      ></Boton>
+      />
     </div>
   </div>
 </template>

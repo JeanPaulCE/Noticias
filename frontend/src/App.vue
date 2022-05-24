@@ -1,20 +1,33 @@
 <script setup>
-import Logo from "./components/Logo.vue";
-import Btn from "./layouts/ButonGroup.vue";
+import Footer from './layouts/Footer.vue';
+import Header from './layouts/Header.vue';
+
+
+import ButtonGroup from "./layouts/ButtonGroup.vue";
 import Nav from "./layouts/Nav.vue";
 </script>
 
 <template>
+  <Header />
   <div class="main">
-    <Nav></Nav>
-    <Btn></Btn>
+    <ButtonGroup />
   </div>
+
+  <!-- Test Roter -->
+  <router-link to="/">Inicio</router-link>
+  <br />
+  <router-link to="/news">Noticias</router-link>
+  <link-view />
+  <router-view></router-view>
+  <!-- Test Router -->
+
+  <Footer />
 </template>
 
 <style lang="scss" scoped>
 .main {
   background: var(--bg);
-  height: 100vh;
+  height: 50vh;
   overflow-y: scroll;
 }
 </style>
