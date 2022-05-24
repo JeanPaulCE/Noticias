@@ -6,7 +6,7 @@ import Logo from "../components/Logo.vue";
 <template>
   <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container-fluid">
-      <Logo></Logo>
+      <Logo />
       <button
         class="navbar-toggler"
         type="button"
@@ -43,15 +43,6 @@ import Logo from "../components/Logo.vue";
               <li><hr class="dropdown-divider" /></li>
               <li><a class="dropdown-item" href="#">Something else here</a></li>
             </ul>
-          </li>
-          <li class="nav-item">
-            <a
-              class="nav-link disabled"
-              href="#"
-              tabindex="-1"
-              aria-disabled="true"
-              >Disabled</a
-            >
           </li>
         </ul>
         <form class="d-flex">

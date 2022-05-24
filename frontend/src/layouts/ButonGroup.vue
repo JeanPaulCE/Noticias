@@ -25,7 +25,7 @@ function click(btn) {
         @click="click(0)"
         class="w-100"
         msg="Para ti"
-        :type="botones[0]"
+        :type="botones[0].class"
         url="dir"
       ></Boton>
     </div>
@@ -34,7 +34,7 @@ function click(btn) {
         @click="click(1)"
         class="w-100"
         msg="Popular"
-        :type="botones[1]"
+        :type="botones[1].class"
         url="dir"
       ></Boton>
     </div>
@@ -43,7 +43,7 @@ function click(btn) {
         @click="click(2)"
         class="w-100"
         msg="Reciente"
-        :type="botones[2]"
+        :type="botones[2].class"
         url="dir"
       ></Boton>
     </div>
