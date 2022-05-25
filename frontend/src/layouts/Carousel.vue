@@ -3,9 +3,7 @@
 </script>
 
 <template>
-    <div>
-
-    </div>
+<h1 class="text-white">Carousel</h1>
 </template>
 
 <style lang="scss" scoped>
