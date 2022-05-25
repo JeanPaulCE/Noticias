@@ -1,11 +1,11 @@
 <script setup>
-import Nav from './Nav.vue';
+import Nav from "./Nav.vue";
 </script>
 
 <template>
-	<header>
-		<Nav />
-	</header>
+  <header>
+    <Nav />
+  </header>
 </template>
 
 <style lang="scss" scoped></style>

@@ -1,5 +1,5 @@
 <script setup>
-import Boton from "../components/Boton.vue";
+import Boton from "../components/Button.vue";
 import Logo from "../components/Logo.vue";
 </script>
 
@@ -45,8 +45,6 @@ import Logo from "../components/Logo.vue";
     </div>
   </nav>
 </template>
-$grid-breakpoints: ( xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px, xxl:
-1400px );
 
 <style lang="scss" scoped>
 .pc {

@@ -1,7 +1,6 @@
 <script setup>
-import Footer from './layouts/Footer.vue';
-import Header from './layouts/Header.vue';
-
+import Footer from "./layouts/Footer.vue";
+import Header from "./layouts/Header.vue";
 
 import ButtonGroup from "./layouts/ButtonGroup.vue";
 import Nav from "./layouts/Nav.vue";
@@ -10,16 +9,13 @@ import Nav from "./layouts/Nav.vue";
 <template>
   <Header />
   <div class="main">
-    <ButtonGroup />
+    <!-- Test Roter -->
+    <router-link to="/">Inicio</router-link>
+    <router-link to="/news">Noticias</router-link>
+    <link-view />
+    <router-view></router-view>
+    <!-- Test Router -->
   </div>
-
-  <!-- Test Roter -->
-  <router-link to="/">Inicio</router-link>
-  <br />
-  <router-link to="/news">Noticias</router-link>
-  <link-view />
-  <router-view></router-view>
-  <!-- Test Router -->
 
   <Footer />
 </template>
@@ -27,7 +23,7 @@ import Nav from "./layouts/Nav.vue";
 <style lang="scss" scoped>
 .main {
   background: var(--bg);
-  height: 50vh;
+  height: 100vh;
   overflow-y: scroll;
 }
 </style>
