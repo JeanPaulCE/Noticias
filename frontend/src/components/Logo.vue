@@ -1,8 +1,8 @@
 <script setup></script>
 <template>
-  <div class="m-2">
-    <h1>N<span>G</span></h1>
-    <p>News Gaming</p>
+  <div class="">
+    <h1 class="text-white">N<span class="text-primary">G</span></h1>
+    <p class="text-dark">News Gaming</p>
   </div>
 </template>
 
@@ -11,15 +11,10 @@ div {
   h1 {
     display: inline-block;
     font-size: 1.7rem;
-    color: #fff;
-    font-weight: bold;
-    span {
-      color: var(--red);
-    }
   }
   p {
     display: inline-block;
-    color: var(--text-second);
+    opacity: 60%;
   }
 }
 </style>

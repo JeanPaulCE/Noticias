@@ -1,26 +1,5 @@
-// tipografias
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
-$font-family-base: "Inter", sans-serif;
-
-// variables
-$spacer: 2.5rem; //spacer = 2x mt-1 = 1/2x mt-2 = 1x mt-3=2x
-$font-size-base: 0.75rem;
-
-$primary: #d72626;
-$secondary: #171930;
-// $success: $green;
-// $info: $cyan;
-// $warning: $yellow;
-$danger: #aa2328;
-$light: #171930;
-$dark: #ffffff99;
-
-// root
-:root {
-  --red: #d72626;
-  --bg: #171930;
-  --red-low: #aa2328;
-  --text-second: #ffffff99;
-}
+@import "./spacing.scss";
+@import "./typografy.scss";
+@import "./vars.scss";
 
 @import "bootstrap/scss/bootstrap.scss";

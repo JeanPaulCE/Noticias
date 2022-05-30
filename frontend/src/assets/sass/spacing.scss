@@ -1,0 +1,5 @@
+//spacer = 2x mt-1 = 1/2x mt-2 = 1x mt-3=2x mt-4 = 3x mt-5 = 3x mt-5 = 6x
+$spacer: 2.5rem;
+@media (min-width: 768px) {
+  $spacer: 3.125rem;
+}

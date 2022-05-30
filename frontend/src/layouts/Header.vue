@@ -3,8 +3,8 @@ import Nav from "./Nav.vue";
 </script>
 
 <template>
-  <header>
-    <Nav />
+  <header class="pt-2">
+    <Nav></Nav>
   </header>
 </template>
 

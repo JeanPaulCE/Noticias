@@ -8,22 +8,26 @@ import Nav from "./layouts/Nav.vue";
 
 <template>
   <Header />
-  <div class="main">
-    <!-- Test Roter -->
-    <router-link to="/">Inicio</router-link>
-    <router-link to="/news">Noticias</router-link>
-    <link-view />
-    <router-view></router-view>
-    <!-- Test Router -->
-  </div>
-
+  <main class="container-fluid text-white">
+    <div>
+      <router-view></router-view>
+    </div>
+  </main>
   <Footer />
 </template>
 
 <style lang="scss" scoped>
-.main {
-  background: var(--bg);
-  height: 100vh;
-  overflow-y: scroll;
+@import "./assets/sass/custom.scss";
+main {
+  div {
+    margin: 0 calc($spacer/2);
+  }
+}
+@media (min-width: 768px) {
+  main {
+    div {
+      margin: 0 calc($spacer * 2.5);
+    }
+  }
 }
 </style>
