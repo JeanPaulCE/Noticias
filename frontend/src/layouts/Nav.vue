@@ -1,23 +1,22 @@
 <script setup>
 import { ref } from "vue";
-import Boton from "../components/Button.vue";
 import Logo from "../components/Logo.vue";
 
-const mobil = ref(true);
+const mobile = ref(true);
 
 if (window.innerWidth > 768) {
-  mobil.value = false;
+  mobile.value = false;
 }
 </script>
 
 <template>
-  <!-- Mobil NavBar -->
-  <nav class="navbar navbar-expand-lg navbar-dark" v-if="mobil">
+  <!-- Mobile NavBar -->
+  <nav class="navbar navbar-expand-lg navbar-dark" v-if="mobile">
     <div class="container-fluid mx-2">
       <Logo />
     </div>
   </nav>
-  <div class="second-nav" v-if="mobil">
+  <div class="second-nav" v-if="mobile">
     <div class="end position-fixed w-100 bottom-0">
       <div class="col">
         <ul class="navbar-sc row">
@@ -86,7 +85,7 @@ if (window.innerWidth > 768) {
     </div>
   </div>
   <!-- PC NavBar -->
-  <nav class="navbar navbar-expand-lg navbar-dark mx-3 pc" v-if="!mobil">
+  <nav class="navbar navbar-expand-lg navbar-dark mx-3 pc" v-if="!mobile">
     <div class="container-fluid">
       <Logo />
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
@@ -112,8 +111,8 @@ if (window.innerWidth > 768) {
   </nav>
 </template>
 
-<style lang="scss" scoped>
-@import "../assets/sass/custom.scss";
+<style lang="scss">
+@use "../assets/sass/spacing";
 
 .second-nav {
   display: block;
@@ -125,7 +124,7 @@ if (window.innerWidth > 768) {
     div {
       display: block;
       background: #000;
-      padding: calc(calc($spacer/2) / 2) calc($spacer/2);
+      padding: calc(calc(spacing.$spacer/2) / 2) calc(spacing.$spacer/2);
       .navbar-sc {
         padding: 0;
         margin: 0;

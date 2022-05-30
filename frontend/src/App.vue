@@ -1,9 +1,6 @@
 <script setup>
 import Footer from "./layouts/Footer.vue";
 import Header from "./layouts/Header.vue";
-
-import ButtonGroup from "./layouts/ButtonGroup.vue";
-import Nav from "./layouts/Nav.vue";
 </script>
 
 <template>
@@ -17,16 +14,17 @@ import Nav from "./layouts/Nav.vue";
 </template>
 
 <style lang="scss" scoped>
-@import "./assets/sass/custom.scss";
+@use "./assets/sass/spacing";
+
 main {
   div {
-    margin: 0 calc($spacer/2);
+    margin: 0 calc(spacing.$spacer / 2);
   }
 }
 @media (min-width: 768px) {
   main {
     div {
-      margin: 0 calc($spacer * 2.5);
+      margin: 0 calc(spacing.$spacer * 2.5);
     }
   }
 }

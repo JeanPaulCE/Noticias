@@ -7,9 +7,10 @@
 </template>
 
 <style lang="scss" scoped>
-@import "../assets/sass/custom.scss";
+@use "../assets/sass/vars";
+
 footer {
-  background-color: $footerColor;
+  background-color: vars.$footerColor;
   p {
     text-align: center;
   }

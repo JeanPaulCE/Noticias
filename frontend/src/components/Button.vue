@@ -15,16 +15,18 @@ function clicked() {
 </template>
 
 <style lang="scss" scoped>
-@import "../assets/sass/custom.scss";
+@use "../assets/sass/spacing";
+@use "../assets/sass/vars";
+
 button {
   border-style: hidden;
   border-radius: 12px;
   height: $spacer;
-  padding: 0 calc($spacer/2);
+  padding: 0 calc(spacing.$spacer/2);
   color: #ffff;
 }
 .btn-red {
-  background-color: var(--red);
+  background-color: vars.$primary;
 }
 .btn-border {
   background-color: rgba(0, 0, 0, 0);
