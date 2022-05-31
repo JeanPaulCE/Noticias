@@ -3,7 +3,7 @@
 </script>
 
 <template>
-
+Carousel
 </template>
 
 <style lang="scss" scoped>

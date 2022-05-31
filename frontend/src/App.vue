@@ -18,9 +18,13 @@ import Header from "./layouts/Header.vue";
 
 main {
   div {
+    display: flex;
+    flex-direction: column;
+    gap: spacing.$spacer;
     margin: 0 calc(spacing.$spacer / 2);
   }
 }
+
 @media (min-width: 768px) {
   main {
     div {
