@@ -8,6 +8,8 @@
 
     <div class="container-fluid img-p mt-3">
         <img class="w-100" src="../assets/fallguys.jpeg" alt="">
+        <h1 class="fw-bold">El divertido 'Fall Guys' se pasa al free to play y confirma su 
+        llegada a Nintendo Switch y Xbox</h1>
     </div>
 
 </template>
@@ -21,8 +23,8 @@
 
     @media (min-width: 768px) {
         .img-p{
-            padding-left: 5rem;
-            padding-right: 5rem;
+            padding-left: 6.25rem;
+            padding-right: 6.25rem;
         }
     } 
 
