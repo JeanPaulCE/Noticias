@@ -17,11 +17,11 @@ p {
 }
 
 .center{
-    margin: 0 calc(spacing.$spacer / 2);
+    margin: 0 calc($spacer / 2);
     @media (min-width: 768px) {
       main {
         div {
-          margin: 0 calc(spacing.$spacer * 2.5);
+          margin: 0 calc($spacer * 2.5);
         }
       }
     }   
@@ -31,13 +31,13 @@ p {
   @media (min-width: 768px) {
     main {
       div {
-        margin: 0 calc(spacing.$spacer * 2.5);
+        margin: 0 calc($spacer * 2.5);
       }
     }
   }   
 }
 
 .center-d{
-  margin: 0 calc(spacing.$spacer / 2);  
+  margin: 0 calc($spacer / 2);  
 }
 // 
