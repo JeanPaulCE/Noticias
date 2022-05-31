@@ -5,7 +5,7 @@ import Header from "./layouts/Header.vue";
 
 <template>
   <Header />
-  <main class="container-fluid text-white">
+  <main class="container-fluid p-0 text-white">
       <router-view></router-view>
   </main>
   <Footer />
@@ -14,20 +14,11 @@ import Header from "./layouts/Header.vue";
 <style lang="scss" scoped>
 @use "./assets/sass/spacing";
 
-/*main {
+main {
   div {
     display: flex;
     flex-direction: column;
     gap: spacing.$spacer;
-    margin: 0 calc(spacing.$spacer / 2);
   }
 }
-
-@media (min-width: 768px) {
-  main {
-    div {
-      margin: 0 calc(spacing.$spacer * 2.5);
-    }
-  }
-}*/
 </style>
