@@ -1,21 +1,25 @@
 <script setup>
 const props = defineProps({
+	id: String,
 	title: String,
-	img: String,
+	image: String,
+	index: Number,
 });
 </script>
 
 <template>
-	<div class="">
-		<img class="position-relative" src="../assets/valorant.jpeg" alt="" />
-		<p class="position-absolute bottom-50">Texto</p>
+	<div class="w-100" :class="(index % 2) == 0 ? 'card-left' : 'card-right'">
+		<h3 class="position-absolute">{{ title }}</h3>
+		<img class="w-100" :src="image" :alt="title" loading="lazy" />
 	</div>
 </template>
 
 <style lang="scss" scoped>
-img {
-	height: 134px;
-	width: 335px;
-	opacity: 65%;
+.card-left {
+	
+}
+
+.card-right {
+	
 }
 </style>

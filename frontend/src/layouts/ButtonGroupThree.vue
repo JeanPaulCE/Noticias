@@ -2,20 +2,9 @@
 import { ref } from "vue";
 import Button from "../components/Button.vue";
 
-const buttons = ref([
-  { 
-    msg: 'Para ti',
-    class: "btn-red"
-  },
-  {
-    msg: 'Popular',
-    class: "btn-border",
-  },
-  { 
-    msg: 'Reciente',
-    class: "btn-border" 
-  }
-]);
+const props = defineProps({
+	buttons: Array,
+});
 
 function click(btnIndex) {
   for (let index = 0; index < buttons.value.length; index++) {
@@ -29,30 +18,12 @@ function click(btnIndex) {
 </script>
 <template>
   <div class="row gx-2">
-    <div class="col-4">
+    <div v-for="(item, index) in buttons" class="col-4">
       <Button
-        @click="click(0)"
+        @click="click(index)"
         class="w-100"
-        msg="Para ti"
-        :type="buttons[0].class"
-        url="dir"
-      />
-    </div>
-    <div class="col-4">
-      <Button
-        @click="click(1)"
-        class="w-100"
-        msg="Popular"
-        :type="buttons[1].class"
-        url="dir"
-      />
-    </div>
-    <div class="col-4">
-      <Button
-        @click="click(2)"
-        class="w-100"
-        msg="Reciente"
-        :type="buttons[2].class"
+        :msg="item.msg"
+        :type="item.class"
         url="dir"
       />
     </div>
@@ -60,5 +31,5 @@ function click(btnIndex) {
 </template>
 
 <style lang="scss" scoped>
-  
+
 </style>

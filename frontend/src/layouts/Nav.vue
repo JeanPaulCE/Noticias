@@ -120,6 +120,8 @@ if (window.innerWidth > 768) {
   width: 100%;
   height: 100vh;
   top: 0;
+  z-index: 1;
+
   .end {
     div {
       display: block;
