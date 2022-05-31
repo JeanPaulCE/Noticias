@@ -26,4 +26,18 @@ p {
       }
     }   
 }
+
+.center-m{
+  @media (min-width: 768px) {
+    main {
+      div {
+        margin: 0 calc(spacing.$spacer * 2.5);
+      }
+    }
+  }   
+}
+
+.center-d{
+  margin: 0 calc(spacing.$spacer / 2);  
+}
 // 
