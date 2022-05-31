@@ -1,6 +1,7 @@
 import Home from '../views/Home.vue'
 import News from '../views/News.vue'
 import AdminProfile from '../views/AdminProfile.vue'
+import Details from '../views/Details.vue'
 
 export default [
 	{
@@ -8,11 +9,15 @@ export default [
         component: Home,
     },
 	{
-        path: '/news',
+        path: '/noticias',
         component: News,
     },
     {
-        path: '/AdminProfile',
+        path: '/admin-perfil',
         component: AdminProfile,
+    },
+    {
+        path: '/detalles',
+        component: Details,
     },
 ];
