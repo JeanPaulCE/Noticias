@@ -28,8 +28,8 @@ function click(btnIndex) {
 }
 </script>
 <template>
-  <div class="row mx-1 gx-2">
-    <div class="col">
+  <div class="row gx-2">
+    <div class="col-4">
       <Button
         @click="click(0)"
         class="w-100"
@@ -38,7 +38,7 @@ function click(btnIndex) {
         url="dir"
       />
     </div>
-    <div class="col">
+    <div class="col-4">
       <Button
         @click="click(1)"
         class="w-100"
@@ -47,7 +47,7 @@ function click(btnIndex) {
         url="dir"
       />
     </div>
-    <div class="col">
+    <div class="col-4">
       <Button
         @click="click(2)"
         class="w-100"
@@ -60,5 +60,5 @@ function click(btnIndex) {
 </template>
 
 <style lang="scss" scoped>
-
+  
 </style>
