@@ -1,7 +1,11 @@
-<script setup></script>
+<script setup>
+import Card from "../layouts/Card.vue";
+</script>
 
 <template>
   <h2>News</h2>
+  <Card></Card>
+  <div>
   <p>
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique aliquid,
     error itaque enim, cumque eligendi beatae exercitationem eveniet iste ipsam
@@ -29,6 +33,10 @@
     repellat vitae officia qui, doloribus quisquam dolores delectus eligendi
     velit cupiditate ea eveniet odit.
   </p>
+  </div>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+
+
+</style>
