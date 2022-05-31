@@ -21,7 +21,7 @@ function clicked() {
 button {
 	border-style: hidden;
 	border-radius: 12px;
-	height: $spacer;
+	height: spacing.$spacer;
 	padding: 0 calc(spacing.$spacer/2);
 	color: vars.$light;
 }

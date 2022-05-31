@@ -1,7 +1,11 @@
-<script setup></script>
+<script setup>
+import ButtonGroupThree from "../layouts/ButtonGroupThree.vue";
+</script>
 
 <template>
-  <h2>dario cagon</h2>
+  <h2>Perfil</h2>
+  <ButtonGroupThree  ></ButtonGroupThree>
+
   <p>
     ipsum dolor sit amet consectetur adipisicing elit. Similique aliquid,
     error itaque enim, cumque eligendi beatae exercitationem eveniet iste ipsam
