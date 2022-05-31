@@ -58,7 +58,7 @@ if (window.innerWidth > 768) {
                 d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"
               />
             </svg>
-            <router-link class="link row" to="/news">news</router-link>
+            <router-link class="link row" to="/noticias">Noticias</router-link>
           </li>
           <li class="sc-item col justify-content-center">
             <svg
@@ -78,7 +78,7 @@ if (window.innerWidth > 768) {
                 d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"
               />
             </svg>
-            <router-link class="link row" to="/news">Inicio</router-link>
+            <router-link class="link row" to="/admin-perfil">Perfil</router-link>
           </li>
         </ul>
       </div>
@@ -93,10 +93,10 @@ if (window.innerWidth > 768) {
           <router-link class="nav-link" to="/">Inicio</router-link>
         </li>
         <li class="nav-item p-1">
-          <router-link class="nav-link" to="/news">Noticias</router-link>
+          <router-link class="nav-link" to="/noticias">Noticias</router-link>
         </li>
         <li class="nav-item p-1">
-          <router-link class="nav-link" to="/">Perfil</router-link>
+          <router-link class="nav-link" to="/admin-perfil">Perfil</router-link>
         </li>
       </ul>
       <form class="d-flex">
