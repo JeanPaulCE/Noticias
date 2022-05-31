@@ -5,10 +5,8 @@ import Header from "./layouts/Header.vue";
 
 <template>
   <Header />
-  <main class="container-fluid text-white">
-    <div>
+  <main class="container-fluid p-0 text-white">
       <router-view></router-view>
-    </div>
   </main>
   <Footer />
 </template>
@@ -21,15 +19,6 @@ main {
     display: flex;
     flex-direction: column;
     gap: spacing.$spacer;
-    margin: 0 calc(spacing.$spacer / 2);
-  }
-}
-
-@media (min-width: 768px) {
-  main {
-    div {
-      margin: 0 calc(spacing.$spacer * 2.5);
-    }
   }
 }
 </style>
