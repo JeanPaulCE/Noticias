@@ -3,9 +3,18 @@ import { ref } from "vue";
 import Button from "../components/Button.vue";
 
 const buttons = ref([
-  { class: "btn-red" },
-  { class: "btn-border" },
-  { class: "btn-border" },
+  { 
+    msg: 'Para ti',
+    class: "btn-red"
+  },
+  {
+    msg: 'Popular',
+    class: "btn-border",
+  },
+  { 
+    msg: 'Reciente',
+    class: "btn-border" 
+  }
 ]);
 
 function click(btnIndex) {
