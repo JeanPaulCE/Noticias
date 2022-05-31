@@ -3,6 +3,8 @@ import App from "./App.vue";
 import "./assets/css/custom.css";
 import router from "./router/index";
 
-createApp(App).use(router).mount("#app");
+createApp(App)
+    .use(router)
+    .mount("#app");
 
 import "bootstrap/dist/js/bootstrap.min.js";

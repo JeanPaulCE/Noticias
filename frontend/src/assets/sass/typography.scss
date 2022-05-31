@@ -1,22 +1,31 @@
 // tipografias
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
 $font-family-base: "Inter", sans-serif;
-$font-size-base: 0.75rem;
 
-:root {
-  --h1: 1.688rem;
-  --h2: 1.5rem;
-  --h3: 1.25rem;
-  --h4: 1rem;
-  --h5: 0.75rem;
-  --h6: 0.5rem;
-  --bs-body-font-size: 0.75rem;
-}
+$font-size-base: 0.75rem;
+$h1-font-size: 1.688rem;
+$h2-font-size: 1.5rem;
+$h3-font-size: 1.25rem;
+$h4-font-size: 1rem;
+$h5-font-size: 0.75rem;
+$h6-font-size: 0.5rem;
+
+// :root {
+//   --h1: 1.688rem;
+//   --h2: 1.5rem;
+//   --h3: 1.25rem;
+//   --h4: 1rem;
+//   --h5: 0.75rem;
+//   --h6: 0.5rem;
+//   --bs-body-font-size: 0.75rem;
+// }
 
 @media (min-width: 768px) {
-  :root {
-    --bs-body-font-size: 0.875rem;
-  }
+  // :root {
+  //   --bs-body-font-size: 0.875rem;
+  // }
+
+  $font-family-base: 0.875rem;
 }
 
 h1 {
@@ -30,7 +39,6 @@ h4 {
 h5 {
 }
 h6 {
-  font-size: var(--);
 }
 p {
 }
