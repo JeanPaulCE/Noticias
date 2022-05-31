@@ -2,6 +2,7 @@ import Home from '../views/Home.vue'
 import News from '../views/News.vue'
 import AdminProfile from '../views/AdminProfile.vue'
 import Details from '../views/Details.vue'
+import Publication from '../views/AdminPublication.vue'
 
 export default [
 	{
@@ -19,5 +20,9 @@ export default [
     {
         path: '/detalles',
         component: Details,
+    },
+    {
+        path: '/publicacion',
+        component: Publication,
     },
 ];
