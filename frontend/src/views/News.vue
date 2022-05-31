@@ -1,34 +1,23 @@
-<script setup></script>
+<script setup>
+import ButtonGroupThree from '../layouts/ButtonGroupThree.vue';
+import Card from '../layouts/Card.vue';
+import Hero from '../layouts/Carousel.vue';
+
+import fetchAPI from '../helpers/fetchAPI';
+
+fetchAPI().then(data => {
+  console.log(data[0]);
+});
+
+</script>
 
 <template>
-  <h2>News</h2>
-  <p>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique aliquid,
-    error itaque enim, cumque eligendi beatae exercitationem eveniet iste ipsam
-    explicabo deleniti architecto ratione voluptates fugiat doloremque
-    cupiditate. Eius maxime in quaerat, atque voluptatem odit ex necessitatibus
-    esse minima magnam quos, eaque asperiores qui aspernatur cum dicta provident
-    eveniet odio doloremque! Voluptas sequi officia id eius ex voluptatibus,
-    voluptatum temporibus facilis optio hic quisquam asperiores harum enim
-    libero ullam, ad explicabo dolores minus, aliquid laboriosam culpa impedit!
-    Natus impedit unde voluptates corrupti corporis temporibus dicta maiores
-    repellat vitae officia qui, doloribus quisquam dolores delectus eligendi
-    velit cupiditate ea eveniet odit.
-  </p>
-  <br />
-  <p>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique aliquid,
-    error itaque enim, cumque eligendi beatae exercitationem eveniet iste ipsam
-    explicabo deleniti architecto ratione voluptates fugiat doloremque
-    cupiditate. Eius maxime in quaerat, atque voluptatem odit ex necessitatibus
-    esse minima magnam quos, eaque asperiores qui aspernatur cum dicta provident
-    eveniet odio doloremque! Voluptas sequi officia id eius ex voluptatibus,
-    voluptatum temporibus facilis optio hic quisquam asperiores harum enim
-    libero ullam, ad explicabo dolores minus, aliquid laboriosam culpa impedit!
-    Natus impedit unde voluptates corrupti corporis temporibus dicta maiores
-    repellat vitae officia qui, doloribus quisquam dolores delectus eligendi
-    velit cupiditate ea eveniet odit.
-  </p>
+	<h1>News</h1>
+	<Hero />
+	<ButtonGroupThree />
+	<Card />
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+
+</style>
