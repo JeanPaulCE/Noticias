@@ -1,35 +1,48 @@
-<script setup></script>
+<script setup>
+import { ref, onMounted } from 'vue';
+import ButtonGroupThree from '../layouts/ButtonGroupThree.vue';
+import Card from '../layouts/Card.vue';
+import fetchAPI from '../helpers/fetchAPI';
+
+const news = ref();
+const buttons = [
+	{
+		msg: 'Para ti',
+		class: 'btn-red',
+	},
+	{
+		msg: 'Popular',
+		class: 'btn-border',
+	},
+	{
+		msg: 'Reciente',
+		class: 'btn-border',
+	},
+];
+
+onMounted(() => {
+	fetchAPI().then(data => {
+		news.value = data;
+	});
+});
+</script>
 
 <template>
-  <h2>Home</h2>
-  <p>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique aliquid,
-    error itaque enim, cumque eligendi beatae exercitationem eveniet iste ipsam
-    explicabo deleniti architecto ratione voluptates fugiat doloremque
-    cupiditate. Eius maxime in quaerat, atque voluptatem odit ex necessitatibus
-    esse minima magnam quos, eaque asperiores qui aspernatur cum dicta provident
-    eveniet odio doloremque! Voluptas sequi officia id eius ex voluptatibus,
-    voluptatum temporibus facilis optio hic quisquam asperiores harum enim
-    libero ullam, ad explicabo dolores minus, aliquid laboriosam culpa impedit!
-    Natus impedit unde voluptates corrupti corporis temporibus dicta maiores
-    repellat vitae officia qui, doloribus quisquam dolores delectus eligendi
-    velit cupiditate ea eveniet odit.
-  </p>
-  <br />
-  <p>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique aliquid,
-    error itaque enim, cumque eligendi beatae exercitationem eveniet iste ipsam
-    explicabo deleniti architecto ratione voluptates fugiat doloremque
-    cupiditate. Eius maxime in quaerat, atque voluptatem odit ex necessitatibus
-    esse minima magnam quos, eaque asperiores qui aspernatur cum dicta provident
-    eveniet odio doloremque! Voluptas sequi officia id eius ex voluptatibus,
-    voluptatum temporibus facilis optio hic quisquam asperiores harum enim
-    libero ullam, ad explicabo dolores minus, aliquid laboriosam culpa impedit!
-    Natus impedit unde voluptates corrupti corporis temporibus dicta maiores
-    repellat vitae officia qui, doloribus quisquam dolores delectus eligendi
-    velit cupiditate ea eveniet odit.
-  </p>
-  <br />
+	<section>
+		<ButtonGroupThree class="center" :buttons="buttons" />
+
+		<div v-for="(item, index) in news" class="col-md-4">
+			<Card v-bind="item" :index="index" />
+		</div>
+	</section>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+@use '../assets/sass/spacing';
+
+section {
+	display: flex;
+	flex-direction: column;
+	gap: spacing.$spacer / 2;
+}
+</style>

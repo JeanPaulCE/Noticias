@@ -18,6 +18,7 @@ p {
 
 .center{
     margin: 0 calc($spacer / 2);
+    
     @media (min-width: 768px) {
       main {
         div {
