@@ -6,9 +6,7 @@ import Header from "./layouts/Header.vue";
 <template>
   <Header />
   <main class="container-fluid text-white">
-    <div>
       <router-view></router-view>
-    </div>
   </main>
   <Footer />
 </template>
@@ -16,7 +14,7 @@ import Header from "./layouts/Header.vue";
 <style lang="scss" scoped>
 @use "./assets/sass/spacing";
 
-main {
+/*main {
   div {
     margin: 0 calc(spacing.$spacer / 2);
   }
@@ -27,5 +25,5 @@ main {
       margin: 0 calc(spacing.$spacer * 2.5);
     }
   }
-}
+}*/
 </style>
