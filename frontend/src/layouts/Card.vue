@@ -25,7 +25,7 @@ const props = defineProps({
 </template>
 
 <style lang="scss" scoped>
-@use "../assets/sass/spacing.scss";
+@use "../assets/sass/spacing";
 
 img,
 .line,

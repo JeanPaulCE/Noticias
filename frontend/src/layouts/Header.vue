@@ -2,12 +2,15 @@
 import Nav from "./Nav.vue";
 import Hero from '../layouts/Carousel.vue';
 
+const props = defineProps({
+  news: Array,
+});
 </script>
 
 <template>
   <header class="pt-2">
     <Nav></Nav>
-    <Hero v-if="$route.path == '/'" class="mb-2" />
+    <Hero :news="news" v-if="$route.path == '/'" class="mb-2" />
   </header>
 </template>
 

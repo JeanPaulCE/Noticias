@@ -1,13 +1,23 @@
 <script setup>
+import { ref, onMounted } from "vue";
 import Footer from "./layouts/Footer.vue";
 import Header from "./layouts/Header.vue";
+import fetchAPI from "./helpers/fetchAPI";
+
+const news = ref([]);
+
+onMounted(() => {
+  fetchAPI('/news').then((data) => {
+    news.value = data;
+  });
+});
 </script>
 
 <template>
-  <Header />
+  <Header :news="news" />
   <main class="container-fluid p-0 text-white">
     <!-- <div> -->
-      <router-view></router-view>
+      <router-view :news="news"></router-view>
     <!-- </div> -->
   </main>
   <Footer />

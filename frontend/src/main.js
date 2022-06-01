@@ -8,3 +8,4 @@ createApp(App)
     .mount("#app");
 
 import "bootstrap/dist/js/bootstrap.min.js";
+import "bootstrap/dist/js/bootstrap.bundle.js";

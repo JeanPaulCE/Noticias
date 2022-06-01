@@ -15,6 +15,12 @@ p {
   padding: 0;
 }
 
+.container-responsive {
+  @media (min-width: 768px) {
+    margin: 0 $spacer;
+  }
+}
+
 .center {
   margin: 0 calc($spacer / 2);
 
