@@ -25,7 +25,11 @@ const buttons = [
 
 <template>
   <section>
-    <ButtonGroupThree class="mt-2 mg--4" :buttons="buttons" />
+    <ButtonGroupThree
+      class="mt-2 mx-2"
+      :class="{ 'mg--4': !isMobile() }"
+      :buttons="buttons"
+    />
 
     <div
       :class="{ 'mg--4': !isMobile() }"
@@ -46,7 +50,8 @@ const buttons = [
 @use "../assets/sass/spacing";
 
 .mg--4 {
-  margin: 0 calc(spacing.$spacer * 2.5);
+  margin: calc(spacing.$spacer/2) calc(spacing.$spacer * 2.5) 0
+    calc(spacing.$spacer * 2.5) !important;
 }
 
 section {
