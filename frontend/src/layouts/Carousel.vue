@@ -19,6 +19,7 @@ const popularNews = computed(() => {
   });
 
   return popularNews.slice(0, 3);
+  
 });
 </script>
 

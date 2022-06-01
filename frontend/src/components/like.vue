@@ -2,7 +2,7 @@
 import { ref } from "vue";
 
     const isLike = ref(false);
-    const like = ref(1);
+    const like = ref(2);
 
     const props = defineProps({
         likes: Number
