@@ -33,7 +33,11 @@ const popularNews = computed(() => {
 				:class="{ active: index == 0 }"
 				class="carousel-item"
 			>
-				<img :src="item.image" class="d-block w-100" :alt="item.title" />
+				<img :src="item.image" :alt="item.title" class="w-100 opacity-75" />
+				<div class="position-absolute">
+					<h2 class="fs-2 text-light">{{ item.title }}</h2>
+					<p class="fs-4 text-light opacity-75">{{ item.date }} {{ item.author }}</p>
+				</div>
 			</div>
 		</div>
 		<button
@@ -58,10 +62,18 @@ const popularNews = computed(() => {
 </template>
 
 <style lang="scss" scoped>
-img {
-	@media (min-width: 768px) {
-		aspect-ratio: 3 / 1;
-        object-fit: cover;
+@use '../assets/sass/spacing';
+
+.carousel-item {
+	height: 30vh;
+
+	.position-absolute {
+		left: spacing.$spacer;
+		bottom: calc(spacing.$spacer / 2);
+	}
+
+	@media (min-width: 992px) {
+		height: 60vh;
 	}
 }
 </style>
