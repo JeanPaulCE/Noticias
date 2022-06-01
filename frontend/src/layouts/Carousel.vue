@@ -1,10 +1,6 @@
 <script setup>
-<<<<<<< HEAD
-import { computed } from 'vue';
-import isMobile from '../helpers/isMobile';
-=======
 import { computed } from "vue";
->>>>>>> 2d6da50d4fd8050a6d6237e052adff577d15fe8e
+import isMobile from "../helpers/isMobile";
 
 const props = defineProps({
   news: Array,
@@ -27,49 +23,10 @@ const popularNews = computed(() => {
 </script>
 
 <template>
-<<<<<<< HEAD
-	<div
-		id="carousel"
-		class="carousel slide"
-		:class="{ 'mg--4': !isMobile() }"
-		data-bs-ride="carousel"
-	>
-		<div class="carousel-inner">
-			<div
-				v-for="(item, index) in popularNews"
-				:class="{ active: index == 0 }"
-				class="carousel-item"
-			>
-				<img :src="item.image" :alt="item.title" class="w-100 opacity-75" />
-				<div class="position-absolute">
-					<h2 class="fs-2 text-light">{{ item.title }}</h2>
-					<p class="fs-4 text-light opacity-75">{{ item.date }} {{ item.author }}</p>
-				</div>
-			</div>
-		</div>
-		<button
-			class="carousel-control-prev"
-			type="button"
-			data-bs-target="#carousel"
-			data-bs-slide="prev"
-		>
-			<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-			<span class="visually-hidden">Previous</span>
-		</button>
-		<button
-			class="carousel-control-next"
-			type="button"
-			data-bs-target="#carousel"
-			data-bs-slide="next"
-		>
-			<span class="carousel-control-next-icon" aria-hidden="true"></span>
-			<span class="visually-hidden">Next</span>
-		</button>
-	</div>
-=======
   <div
     id="carousel"
-    class="carousel slide container-responsive"
+    class="carousel slide"
+    :class="{ 'mg--4': !isMobile() }"
     data-bs-ride="carousel"
   >
     <div class="carousel-inner">
@@ -107,7 +64,6 @@ const popularNews = computed(() => {
       <span class="visually-hidden">Next</span>
     </button>
   </div>
->>>>>>> 2d6da50d4fd8050a6d6237e052adff577d15fe8e
 </template>
 
 <style lang="scss" scoped>

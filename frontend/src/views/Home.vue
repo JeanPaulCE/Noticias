@@ -1,7 +1,7 @@
 <script setup>
 import isMobile from "../helpers/isMobile";
 import ButtonGroupThree from "../layouts/ButtonGroupThree.vue";
-import Card from "../layouts/Card.vue";
+import Gallery from "../layouts/Gallery.vue";
 
 const props = defineProps({
   news: Array,
@@ -25,44 +25,18 @@ const buttons = [
 
 <template>
   <section>
-<<<<<<< HEAD
-    <ButtonGroupThree 
-      :buttons="buttons" 
-      class="mt-2"
-=======
     <ButtonGroupThree
-      class="mt-2 mx-2"
+      class="mt-2"
       :class="{ 'mg--4': !isMobile() }"
       :buttons="buttons"
->>>>>>> 2d6da50d4fd8050a6d6237e052adff577d15fe8e
     />
-
-    <div
-      :class="{ 'mg--4': !isMobile() }"
-      class="container-responsive row spacing"
-    >
-      <div
-        v-for="(item, index) in news"
-        :class="{ '': !isMobile() }"
-        class="col-md-4 col-sm-12 p-0 my-2 position-relative"
-      >
-        <Card v-bind="item" :index="index" />
-      </div>
-    </div>
+    <Gallery :news="news" />
   </section>
 </template>
 
 <style lang="scss" scoped>
 @use "../assets/sass/spacing";
 
-<<<<<<< HEAD
-=======
-.mg--4 {
-  margin: calc(spacing.$spacer/2) calc(spacing.$spacer * 2.5) 0
-    calc(spacing.$spacer * 2.5) !important;
-}
-
->>>>>>> 2d6da50d4fd8050a6d6237e052adff577d15fe8e
 section {
   width: 100%;
   display: flex;

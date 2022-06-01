@@ -1,9 +1,12 @@
 <script setup>
+    import InputAndLabel from '../components/InputAndLabel.vue';
 
 </script>
 
 <template>
-    <h1>SignUp</h1>
+    <form>
+        <InputAndLabel />
+    </form>
 </template>
 
 
