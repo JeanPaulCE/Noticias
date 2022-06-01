@@ -47,7 +47,7 @@ button {
 }
 .card-news {
   position: relative;
-  width: 100%;
+
   height: 18vh;
   padding: 0;
   div {
@@ -134,6 +134,8 @@ button:hover {
 }
 
 .dektop {
+  margin: 0 calc(spacing.$spacer / 4);
+
   div {
     border-radius: 22px 22px;
     height: 20vh;
@@ -153,6 +155,7 @@ button:hover {
         right: 0;
         bottom: calc(spacing.$spacer/4);
         border-radius: 13px 0 0 13px;
+        padding-right: calc(spacing.$spacer * 2);
       }
     }
   }

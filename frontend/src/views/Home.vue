@@ -25,12 +25,16 @@ const buttons = [
 
 <template>
   <section>
-    <ButtonGroupThree class="center" :buttons="buttons" />
+    <ButtonGroupThree class="mt-2 mg--4" :buttons="buttons" />
 
-    <div :class="{ 'mx-3': !isMobile() }" class="container-responsive row m-0">
+    <div
+      :class="{ 'mg--4': !isMobile() }"
+      class="container-responsive row spacing"
+    >
       <div
         v-for="(item, index) in news"
-        class="col-md-4 p-0 my-2 position-relative"
+        :class="{ '': !isMobile() }"
+        class="col-md-4 col-sm-12 p-0 my-2 position-relative"
       >
         <Card v-bind="item" :index="index" />
       </div>
@@ -40,6 +44,10 @@ const buttons = [
 
 <style lang="scss" scoped>
 @use "../assets/sass/spacing";
+
+.mg--4 {
+  margin: 0 calc(spacing.$spacer * 2.5);
+}
 
 section {
   width: 100%;
