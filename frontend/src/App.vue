@@ -108,6 +108,10 @@ onMounted(() => {
 @use "./assets/sass/spacing";
 
 main {
+  min-height: 70vh;
+}
+
+main {
   div {
     display: flex;
     flex-direction: column;
