@@ -28,7 +28,7 @@ function position(index) {
         <h3>{{ title }}</h3>
         <div class="line"></div>
         <img class="w-100" :src="image" :alt="title" loading="lazy" />
-        <button>ver mas</button>
+        <button>ver más</button>
       </div>
     </div>
   </div>
