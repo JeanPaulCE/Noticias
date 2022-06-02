@@ -4,6 +4,7 @@
 import Like from "../components/Like.vue"
 import { ref } from "vue";
 import { computed } from "vue";
+import Gallery from "../layouts/Gallery.vue";
 
 const id = 1;
 
@@ -16,6 +17,10 @@ const selectedNew = computed(() => {
 
   return selectedNew;
 });
+
+console.log(selectedNew);
+
+
 
 
 //console.log(selectedNew[id]);
@@ -30,13 +35,18 @@ const selectedNew = computed(() => {
                 <h1 class="fw-bold mt-3">{{item.title}}</h1>
             </div>
             <div class="container-fluid div-p mt-1">
-                <p class="opacity-50">{{item.date}} Por: {{item.Autor}}</p>
+                <p class="opacity-50">{{item.date}} | Por: {{item.Autor}} | {{item.category}}</p>
                 <p class="mt-2">{{item.content}}</p>
             </div>
             <div class="container-fluid div-p mt-2">
-                <Like></Like>
+                <Like :likes="item.likes"></Like>
             </div>
         </div>
+    </div>
+
+    <div>
+        <h2 class="container-fluid div-p my-3 fw-bold">Noticias relacionadas</h2>
+        <Gallery :news="news"></Gallery>
     </div>
 </template>
 
