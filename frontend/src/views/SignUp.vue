@@ -1,17 +1,37 @@
 <script setup>
-    import InputAndLabel from '../components/InputAndLabel.vue';
-    import isMobile from '../helpers/isMobile';
+import isMobile from '../helpers/isMobile';
+import Input from '../components/Input.vue';
+import Button from '../components/Button.vue';
+
+
+const buttons = [
+  {
+    msg: "Registrarme",
+    class: "btn-red",
+  },
+  {
+    msg: "Iniciar sesión",
+    class: "btn-border",
+  },
+];
 </script>
 
 <template>
-    <form
-        :class="{ 'mg--4': !isMobile(), 'mx-2': isMobile() }"
-    >
-        <InputAndLabel />
-    </form>
+	<section :class="{ 'mg--4': !isMobile(), 'mx-2': isMobile() }">
+		<h1 class="fs-1 mb-1">Registro</h1>
+		<p class="fs-5 text-white opacity-50 mb-2">
+			¡Registrate para ver las últimas noticias!
+		</p>
+		<form class="row gx-3 gy-2 mb-3">
+			<Input label="Nombre de usuario" type="text" />
+			<Input label="Correo electrónico" type="email" />
+			<Input label="Contraseña" type="password" />
+			<Input label="Confirmar contraseña" type="password" />
+			<div v-for="item in buttons" class="col-md-6">
+				<Button v-bind="item" class="w-100" />
+			</div>
+		</form>
+	</section>
 </template>
 
-
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>
