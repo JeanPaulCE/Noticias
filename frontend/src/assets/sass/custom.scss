@@ -4,7 +4,6 @@
 
 @import "../../../node_modules/bootstrap/scss/bootstrap.scss";
 
-
 h1,
 h2,
 h3,
@@ -12,32 +11,44 @@ h4,
 h5,
 h6,
 p {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
-.center{
-    margin: 0 calc($spacer / 2);
-    @media (min-width: 768px) {
-      main {
-        div {
-          margin: 0 calc($spacer * 2.5);
-        }
-      }
-    }   
+.container-responsive {
+  @media (min-width: 768px) {
+    margin: 0 $spacer;
+  }
 }
 
-.center-m{
+.center {
+  margin: 0 calc($spacer / 2);
+
   @media (min-width: 768px) {
     main {
       div {
         margin: 0 calc($spacer * 2.5);
       }
     }
-  }   
+  }
 }
 
-.center-d{
-  margin: 0 calc($spacer / 2);  
+.center-m {
+  @media (min-width: 768px) {
+    main {
+      div {
+        margin: 0 calc($spacer * 2.5);
+      }
+    }
+  }
 }
-// 
+
+.center-d {
+  margin: 0 calc($spacer / 2);
+}
+//
+
+
+.mg--4 {
+  margin: 0 calc($spacer * 2.5);
+}

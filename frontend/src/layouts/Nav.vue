@@ -1,12 +1,10 @@
 <script setup>
 import { ref } from "vue";
 import Logo from "../components/Logo.vue";
+import isMobile from "../helpers/isMobile";
 
-const mobile = ref(true);
+const mobile = ref(isMobile());
 
-if (window.innerWidth > 768) {
-  mobile.value = false;
-}
 </script>
 
 <template>
@@ -16,74 +14,8 @@ if (window.innerWidth > 768) {
       <Logo />
     </div>
   </nav>
-  <div class="second-nav" v-if="mobile">
-    <div class="end position-fixed w-100 bottom-0">
-      <div class="col">
-        <ul class="navbar-sc row">
-          <li class="sc-item col justify-content-center">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              fill="currentColor"
-              class="bi bi-house row"
-              viewBox="0 0 16 16"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"
-              />
-              <path
-                fill-rule="evenodd"
-                d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"
-              />
-            </svg>
-            <router-link class="link row" to="/">Inicio</router-link>
-          </li>
-          <li class="sc-item col justify-content-center">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              fill="currentColor"
-              class="bi bi-house row"
-              viewBox="0 0 16 16"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"
-              />
-              <path
-                fill-rule="evenodd"
-                d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"
-              />
-            </svg>
-            <router-link class="link row" to="/noticias">Noticias</router-link>
-          </li>
-          <li class="sc-item col justify-content-center">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              fill="currentColor"
-              class="bi bi-house row"
-              viewBox="0 0 16 16"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"
-              />
-              <path
-                fill-rule="evenodd"
-                d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"
-              />
-            </svg>
-            <router-link class="link row" to="/admin-perfil">Perfil</router-link>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
+
+  
   <!-- PC NavBar -->
   <nav class="navbar navbar-expand-lg navbar-dark mx-3 pc" v-if="!mobile">
     <div class="container-fluid">
@@ -123,6 +55,7 @@ if (window.innerWidth > 768) {
   z-index: 1;
 
   .end {
+    z-index: 2;
     div {
       display: block;
       background: #000;
@@ -151,6 +84,7 @@ if (window.innerWidth > 768) {
   }
 }
 .pc {
+  z-index: 2;
   div {
     ul {
       li {
