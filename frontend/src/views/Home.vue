@@ -30,17 +30,3 @@ const buttons = [
       :class="{ 'mg--4': !isMobile() }"
       :buttons="buttons"
     />
-    <Gallery :news="news" />
-  </section>
-</template>
-
-<style lang="scss" scoped>
-@use "../assets/sass/spacing";
-
-section {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: calc(spacing.$spacer / 2);
-}
-</style>
