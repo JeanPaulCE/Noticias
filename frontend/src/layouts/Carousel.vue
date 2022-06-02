@@ -19,17 +19,11 @@ const popularNews = computed(() => {
   });
 
   return popularNews.slice(0, 3);
-  
 });
 </script>
 
 <template>
-  <div
-    id="carousel"
-    class="carousel slide"
-    :class="{ 'mg--4': !isMobile() }"
-    data-bs-ride="carousel"
-  >
+  <div id="carousel" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
       <div
         v-for="(item, index) in popularNews"

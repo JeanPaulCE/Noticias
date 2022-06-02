@@ -6,7 +6,6 @@ import fetchAPI from "./helpers/fetchAPI";
 import isMobile from "./helpers/isMobile";
 
 const news = ref([]);
-const mobile = ref(isMobile());
 
 onMounted(() => {
   fetchAPI("/news").then((data) => {
@@ -22,7 +21,7 @@ onMounted(() => {
     <router-view :news="news"></router-view>
     <!-- </div> -->
   </main>
-  <div class="end position-fixed w-100 bottom-0" v-if="mobile">
+  <div class="end position-fixed w-100 bottom-0" v-if="isMobile()">
     <div class="col">
       <ul class="navbar-sc row">
         <li class="sc-item col justify-content-center">
@@ -108,7 +107,7 @@ onMounted(() => {
 @use "./assets/sass/spacing";
 
 main {
-  min-height: 70vh;
+  min-height: 80vh;
 }
 
 main {

@@ -5,7 +5,13 @@ import isMobile from "../helpers/isMobile";
 const props = defineProps({
     news: Array,
 });
+
+
+
+
+
 </script>
+
 
 <template>
     <div
