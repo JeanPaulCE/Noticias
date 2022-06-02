@@ -6,7 +6,8 @@ import { ref } from "vue";
 import { computed } from "vue";
 import Gallery from "../layouts/Gallery.vue";
 
-const id = 1;
+const id = 3;
+const category="Reggae";
 
 const props = defineProps({
   news: Array,
@@ -17,13 +18,6 @@ const selectedNew = computed(() => {
 
   return selectedNew;
 });
-
-console.log(selectedNew);
-
-
-
-
-//console.log(selectedNew[id]);
 </script>
 
 <template>
