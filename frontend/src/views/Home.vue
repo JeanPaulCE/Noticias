@@ -37,7 +37,6 @@ const buttons = [
     >
       <div
         v-for="(item, index) in news"
-        :class="{ '': !isMobile() }"
         class="col-md-4 col-sm-12 p-0 my-2 position-relative"
       >
         <Card v-bind="item" :index="index" />
