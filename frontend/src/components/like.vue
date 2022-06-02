@@ -2,21 +2,28 @@
 import { ref } from "vue";
 
     const isLike = ref(false);
-    const like = ref(2);
+    //const like = ref(3);
 
     const props = defineProps({
         likes: Number
     });
 
+
+
+    function computed(){
+        return props.likes++;
+    }
+
     function doLike(){
         if(isLike.value==false){
             isLike.value=true;
-            like.value++;
+            //props.likes++;
+            computed();
             console.log(isLike.value);
         }
         else{
             isLike.value=false;
-            like.value--;
+            //props.likes--;
             console.log(isLike.value);
         }
     }
@@ -40,7 +47,7 @@ import { ref } from "vue";
             </button>
         </div>
         <div class="col-sm-11 col-10">
-            <p class="fw-bold">{{like}}</p>
+            <p class="fw-bold">{{likes}}</p>
         </div>
     </div>
 </template>
