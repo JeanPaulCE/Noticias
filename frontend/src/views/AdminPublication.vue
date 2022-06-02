@@ -5,7 +5,7 @@ import ButtonGroupThree from "../layouts/ButtonGroupThree.vue";
 <template>
 <div class="px-5">
   <h2>Perfil</h2>
-
+  teto
   <ButtonGroupThree  ></ButtonGroupThree>
 
   <p>
