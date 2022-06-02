@@ -74,11 +74,13 @@ onMounted(() => {
   Crearfiltro();
   lateralScroll(t_filtro.value);
   lateralScroll(t_categorias.value);
+  filtrar(filtro.value[0]);
 });
 </script>
 
 <template>
-  <div class="my-2 categorias" :class="{ 'mg--4': !isMobile() }">
+  <h2 class="mx-3 ps-1">Categorias</h2>
+  <div class="my-2 categorias" :class="{ 'mx-3 px-1': !isMobile() }">
     <div ref="t_filtro" class="mt-2 mb-1 filtro-categorias">
       <button
         v-for="letra in filtro"

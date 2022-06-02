@@ -7,7 +7,6 @@ const props = defineProps({
 </script>
 
 <template>
-  <h1>Noticias</h1>
   <Categorias></Categorias>
 </template>
 
