@@ -1,5 +1,6 @@
 <script setup>
 import { computed } from "vue";
+import isMobile from "../helpers/isMobile";
 
 const props = defineProps({
   news: Array,
@@ -18,13 +19,15 @@ const popularNews = computed(() => {
   });
 
   return popularNews.slice(0, 3);
+  
 });
 </script>
 
 <template>
   <div
     id="carousel"
-    class="carousel slide container-responsive"
+    class="carousel slide"
+    :class="{ 'mg--4': !isMobile() }"
     data-bs-ride="carousel"
   >
     <div class="carousel-inner">

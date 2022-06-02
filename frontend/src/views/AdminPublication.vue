@@ -3,14 +3,11 @@ import ButtonGroupThree from "../layouts/ButtonGroupThree.vue";
 </script>
 
 <template>
-<div class="px-5">
+<div class="mg--4">
   <h2>Perfil</h2>
 
-  <ButtonGroupThree  ></ButtonGroupThree>
-
-  <p>
-    la reprehenderit delectus reiciendis perferendis iste excepturi ut architecto, tenetur aliquid facere.
-  </p>
+  <ButtonGroupThree ></ButtonGroupThree>
+  
 </div>
   
 
