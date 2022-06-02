@@ -1,5 +1,9 @@
 <script setup>
 import Categorias from "../layouts/Categorias.vue";
+
+const props = defineProps({
+  news: Array,
+});
 </script>
 
 <template>
