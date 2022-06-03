@@ -4,7 +4,6 @@ import Input from "../components/Input.vue";
 import Logo from "../components/Logo.vue";
 import isMobile from "../helpers/isMobile";
 const mobile = ref(isMobile());
-
 </script>
 
 <template>
@@ -33,7 +32,7 @@ const mobile = ref(isMobile());
       <form class="d-flex">
         <Input
           class="w-100"
-          type="input"
+          type="text"
           ico="/ico/buscar.svg"
           place="Buscar"
         ></Input>
