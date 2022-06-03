@@ -1,6 +1,5 @@
 <script setup>
 import { ref } from "vue";
-
 const isLike = ref(false);
 //const like = ref(3);
 
@@ -29,13 +28,13 @@ function doLike(likes) {
 
 <template>
   <div class="row">
-    <div class="col-sm-1 col-2 d-flex justify-content-sm-end">
+    <div class="col-sm-1 col-2 d-flex">
       <button @click="doLike(likes)" class="btn">
-        <div v-if="isLike == false">
-          <i class="bi bi-heart"></i>
+        <div class="container_ico" v-if="isLike == false">
+          <i class="ico bi bi-heart"></i>
         </div>
 
-        <div v-else>
+        <div v-else class="container_ico">
           <i class="bi bi-heart-fill"></i>
         </div>
       </button>
@@ -48,34 +47,41 @@ function doLike(likes) {
 
 <style lang="scss" scoped>
 @use "../assets/sass/vars.scss";
+
 .btn {
   background: none;
   border: 0;
   padding: 0;
+  width: 100%;
+  height: 100%;
+  .container_ico {
+    width: 100%;
+    height: 100%;
+    i {
+      width: 100%;
+      height: 100%;
+      color: red;
+      font-size: 2em;
+    }
+  }
 }
 
 .btn:focus {
   box-shadow: none;
 }
 
-.heart {
-  color: vars.$primary;
-  height: 30px;
-  width: 30px;
-}
-
 p {
   font-size: 1.5rem;
 }
 
-@media (min-width: 768px) {
-  .heart {
-    height: 40px;
-    width: 40px;
-  }
+// @media (min-width: 768px) {
+//   .heart {
+//     height: 40px;
+//     width: 40px;
+//   }
 
-  p {
-    font-size: 2rem;
-  }
-}
+//   p {
+//     font-size: 2rem;
+//   }
+// }
 </style>
