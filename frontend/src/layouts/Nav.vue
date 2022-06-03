@@ -1,10 +1,9 @@
 <script setup>
 import { ref } from "vue";
+import Input from "../components/Input.vue";
 import Logo from "../components/Logo.vue";
 import isMobile from "../helpers/isMobile";
-
 const mobile = ref(isMobile());
-
 </script>
 
 <template>
@@ -15,7 +14,6 @@ const mobile = ref(isMobile());
     </div>
   </nav>
 
-  
   <!-- PC NavBar -->
   <nav class="navbar navbar-expand-lg navbar-dark mx-3 pc" v-if="!mobile">
     <div class="container-fluid">
@@ -32,12 +30,12 @@ const mobile = ref(isMobile());
         </li>
       </ul>
       <form class="d-flex">
-        <input
-          class="form-control me-2"
-          type="search"
-          placeholder="Search"
-          aria-label="Search"
-        />
+        <Input
+          class="w-100"
+          type="input"
+          ico="/ico/buscar.svg"
+          place="Buscar"
+        ></Input>
       </form>
     </div>
   </nav>

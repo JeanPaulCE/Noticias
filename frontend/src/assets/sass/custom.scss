@@ -48,7 +48,30 @@ p {
 }
 //
 
-
 .mg--4 {
   margin: 0 calc($spacer * 2.5);
+}
+
+body {
+  overflow: overlay;
+}
+* {
+  scrollbar-width: auto;
+  scrollbar-color: #3f4584 #ffffff;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 6px;
+  height: 4px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #171930;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #3f4584;
+  border-radius: 10px;
+  border: 3px none #000000;
 }

@@ -1,5 +1,8 @@
 <script setup>
+import { useRouter } from "vue-router";
 import isMobile from "../helpers/isMobile";
+
+const router = useRouter();
 
 const props = defineProps({
   id: String,
@@ -19,10 +22,14 @@ function position(index) {
     return "card-news dektop";
   }
 }
+
+function clicked(index) {
+  router.push({ name: "Details", params: { id: index } });
+}
 </script>
 
 <template>
-  <div :class="position(index)">
+  <div v-on:click="clicked(index)" :class="position(index)">
     <div class="">
       <div class="">
         <h3>{{ title }}</h3>
