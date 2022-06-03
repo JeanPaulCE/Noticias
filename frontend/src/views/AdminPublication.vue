@@ -1,18 +1,19 @@
 <script setup>
 import ButtonGroupThree from "../layouts/ButtonGroupThree.vue";
 import Input from "../components/Input.vue";
+import isMobile from "../helpers/isMobile";
 
 const buttons = [
   {
-    msg: "Para ti",
+    msg: "Perfil",
     class: "btn-red",
   },
   {
-    msg: "Popular",
+    msg: "Lista",
     class: "btn-border",
   },
   {
-    msg: "Reciente",
+    msg: "Nuevo",
     class: "btn-border",
   },
 ];
@@ -20,37 +21,55 @@ const buttons = [
 </script>
 
 <template>
-<div class="mg--4">
-  <h2>Nuevo</h2>
+<div class="mx-2" :class="{ 'mg--4': !isMobile() }">
 
-    <div>
-      <ButtonGroupThree />
+  <h2 class="mb-2">Nuevo</h2>
+
+    <div class="mb-2">
+      <ButtonGroupThree 
+      :buttons="buttons"
+      />
     </div>
     
 
   <!-- contenido -->
 
-  <div>
-    <form action="">
-      <Input
-          label="Titulo"
-          class="w-50"
-          type="input"
-      ></Input>
+  <div class="">
 
-      <Input
-          label="Contenido"
-          class="w-50"
-          type="input"
-      ></Input>
+      <div class="row">
+        <div class="row mb-3">
+          <div class="col-md-6 col-sm-12">
+            <Input
+              class="w-100"
+              label="Titulo"
+              type="text"
+            ></Input>
+          </div>
+          <div class="col-md-6 col-sm-12">
+            <Input
+              class="w-100"
+              label="Categoria"
+              type="text"
+            ></Input>
+          </div>
+        </div>
 
-
-    <select name="cars" id="cars">
-      <option value="accion">Accion</option>
-    </select>
-
-    <input type="file" multiple>
-  </form>
+        <div class="row">
+          <div class="col-md-6 col-sm-12">
+            <label class="form-label text-white fs-4 fw-bold opacity-50 mb-1" for="">Contenido</label>
+            <textarea class="w-100 txt-area fs-5" name="" id=""  rows="10"></textarea>
+          </div>
+          <div class="col-md-6 col-sm-12">
+            <Input
+              class="w-100"
+              label="Subir"
+              type="file"
+            ></Input>
+          </div>
+        </div>
+        
+        
+      </div>
   </div>
 
   
@@ -62,4 +81,15 @@ const buttons = [
 
 </template>
  
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+@use "../assets/sass/spacing";
+@use "../assets/sass/vars";
+
+  .txt-area{
+    background-color: vars.$input;
+    border: none;
+    border-radius: 0.5rem;
+    color: #fff;
+  }
+  
+</style>
