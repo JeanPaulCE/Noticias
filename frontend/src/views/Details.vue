@@ -18,10 +18,10 @@ const item = computed(() => {
 
 <template>
   <div>
-    <div>
-      <div class="container-fluid div-p mt-3">
+    <div class="mg--4">
+      <div class="container-fluid mt-3">
         <img class="w-100" :src="item.image" alt="" />
-        <h1 class="fw-bold mt-3">{{ item.title }}</h1>
+        <h2 class="fw-bold mt-3">{{ item.title }}</h2>
       </div>
       <div class="container-fluid div-p mt-1">
         <p class="opacity-50">
