@@ -4,6 +4,7 @@ import Input from "../components/Input.vue";
 import Logo from "../components/Logo.vue";
 import isMobile from "../helpers/isMobile";
 const mobile = ref(isMobile());
+
 </script>
 
 <template>
