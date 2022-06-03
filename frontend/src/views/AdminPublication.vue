@@ -1,20 +1,49 @@
 <script setup>
 import ButtonGroupThree from "../layouts/ButtonGroupThree.vue";
+import Input from "../components/Input.vue";
+
+const buttons = [
+  {
+    msg: "Para ti",
+    class: "btn-red",
+  },
+  {
+    msg: "Popular",
+    class: "btn-border",
+  },
+  {
+    msg: "Reciente",
+    class: "btn-border",
+  },
+];
+
 </script>
 
 <template>
 <div class="mg--4">
   <h2>Nuevo</h2>
 
-  <ButtonGroupThree ></ButtonGroupThree>
+    <div>
+      <ButtonGroupThree />
+    </div>
+    
 
   <!-- contenido -->
 
-  <form action="">
-    <h2>Titulo</h2>
-    <input type="text">
-    <h2>Contenido</h2>
-    <textarea name="" id="" cols="30" rows="10"></textarea>
+  <div>
+    <form action="">
+      <Input
+          label="Titulo"
+          class="w-50"
+          type="input"
+      ></Input>
+
+      <Input
+          label="Contenido"
+          class="w-50"
+          type="input"
+      ></Input>
+
 
     <select name="cars" id="cars">
       <option value="accion">Accion</option>
@@ -22,7 +51,8 @@ import ButtonGroupThree from "../layouts/ButtonGroupThree.vue";
 
     <input type="file" multiple>
   </form>
-  
+  </div>
+
   
 
   <!-- contenido -->
