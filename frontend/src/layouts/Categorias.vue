@@ -79,7 +79,6 @@ onMounted(() => {
 </script>
 
 <template>
-  <h2 class="mx-3 ps-1">Categorias</h2>
   <div class="my-2 categorias" :class="{ 'mx-3 px-1': !isMobile() }">
     <div ref="t_filtro" class="mt-2 mb-1 filtro-categorias">
       <button
