@@ -3,6 +3,7 @@ import News from "../views/News.vue";
 import Details from "../views/Details.vue";
 import SignUp from "../views/SignUp.vue";
 import LogIn from "../views/LogIn.vue";
+import Profile from "../views/Profile.vue";
 import AdminProfile from "../views/AdminProfile.vue";
 import Publication from "../views/AdminPublication.vue";
 import PageNotFound from "../views/PageNotFound.vue";
@@ -36,6 +37,11 @@ export default [
     path: "/iniciar-sesion",
     name: "LogIn",
     component: LogIn,
+  },
+  {
+    path: "/perfil",
+    name: "Profile",
+    component: Profile,
   },
   {
     path: "/admin-perfil",
