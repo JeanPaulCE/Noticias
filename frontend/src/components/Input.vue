@@ -16,6 +16,7 @@ const props = defineProps({
     >
       {{ label }}
     </label>
+    
     <input
       :type="type"
       class="form-control text-white fs-5"
