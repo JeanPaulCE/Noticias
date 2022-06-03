@@ -23,6 +23,7 @@ import ButtonGroupThree from "../layouts/ButtonGroupThree.vue";
     <input type="file" multiple>
   </form>
   
+  
 
   <!-- contenido -->
   
