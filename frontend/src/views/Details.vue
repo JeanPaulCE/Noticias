@@ -1,7 +1,7 @@
 <script setup>
 import Like from "../components/Like.vue";
 import { ref, computed } from "vue";
-
+import isMobile from '../helpers/isMobile';
 import Gallery from "../layouts/Gallery.vue";
 import { useRoute, useRouter } from "vue-router";
 
@@ -18,25 +18,27 @@ const item = computed(() => {
 
 <template>
   <div>
-    <div class="mg--4">
+    <div :class="{ 'mg--4': !isMobile(),'px-1': isMobile()}">
       <div class="container-fluid mt-3">
-        <img class="w-100" :src="item.image" alt="" />
+        <div class="overflow"> 
+          <img class="w-100" :src="item.image" alt="" />
+        </div>
         <h2 class="fw-bold mt-3">{{ item.title }}</h2>
       </div>
-      <div class="container-fluid div-p mt-1">
+      <div class="container-fluid mt-1">
         <p class="opacity-50">
           {{ item.date }} | Por: {{ item.Autor }} | {{ item.category }}
         </p>
         <p class="mt-2">{{ item.content }}</p>
       </div>
-      <div class="container-fluid div-p mt-2">
+      <div class="container-fluid mt-2">
         <Like :likes="item.likes"></Like>
       </div>
+        <h3 class="container-fluid  my-3 fw-bold">Noticias relacionadas</h3>
     </div>
   </div>
 
-  <div>
-    <h2 class="container-fluid div-p my-3 fw-bold">Noticias relacionadas</h2>
+  <div >
     <Gallery :news="news"></Gallery>
   </div>
 </template>
@@ -47,18 +49,23 @@ const item = computed(() => {
   padding-right: 1.25rem;
 }
 
-p {
+/*p {
   line-height: 1.5rem;
-}
+}*/
 
 @media (min-width: 768px) {
-  h1 {
+  /*h1 {
     font-size: 2.375rem;
   }
 
   p {
     font-size: 1.5rem;
     line-height: 2.5rem;
+  }*/
+
+  .overflow{
+    height: 65vh;
+	  overflow: hidden;
   }
 }
 

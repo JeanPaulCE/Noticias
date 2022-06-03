@@ -28,7 +28,7 @@ function doLike(likes) {
 
 <template>
   <div class="row">
-    <div class="col-sm-1 col-2 d-flex justify-content-sm-end">
+    <div class="col-sm-1 col-2 d-flex">
       <button @click="doLike(likes)" class="btn">
         <div class="container_ico" v-if="isLike == false">
           <i class="ico bi bi-heart"></i>
