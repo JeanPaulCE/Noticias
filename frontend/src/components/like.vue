@@ -28,7 +28,7 @@ function doLike(likes) {
 
 <template>
   <div class="row">
-    <div class="col-sm-1 col-1 d-flex bg-success">
+    <div class="col-sm-2 col-4 d-flex">
       <button @click="doLike(likes)" class="btn">
         <div class="container_ico" v-if="isLike == false">
           <i class="ico bi bi-heart"></i>
@@ -38,9 +38,7 @@ function doLike(likes) {
           <i class="bi bi-heart-fill"></i>
         </div>
       </button>
-    </div>
-    <div class="col-sm-11 col-11 bg-primary">
-      <p class="fw-bold">{{ likes }}</p>
+      <p class="fw-bold ps-2">{{ likes }}</p>
     </div>
   </div>
 </template>
@@ -52,7 +50,7 @@ function doLike(likes) {
   background: none;
   border: 0;
   padding: 0;
-  width: 100%;
+  width: 20%;
   height: 100%;
   .container_ico {
     width: 100%;
@@ -73,15 +71,4 @@ function doLike(likes) {
 p {
   font-size: 1.5rem;
 }
-
-// @media (min-width: 768px) {
-//   .heart {
-//     height: 40px;
-//     width: 40px;
-//   }
-
-//   p {
-//     font-size: 2rem;
-//   }
-// }
 </style>

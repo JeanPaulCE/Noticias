@@ -31,7 +31,7 @@ const item = computed(() => {
         </p>
         <p class="mt-2">{{ item.content }}</p>
       </div>
-      <div class="container-fluid mt-2">
+      <div class="container mt-2">
         <Like :likes="item.likes"></Like>
       </div>
         <h3 class="container-fluid  my-3 fw-bold">Noticias relacionadas</h3>
@@ -49,19 +49,9 @@ const item = computed(() => {
   padding-right: 1.25rem;
 }
 
-/*p {
-  line-height: 1.5rem;
-}*/
+
 
 @media (min-width: 768px) {
-  /*h1 {
-    font-size: 2.375rem;
-  }
-
-  p {
-    font-size: 1.5rem;
-    line-height: 2.5rem;
-  }*/
 
   .overflow{
     height: 65vh;
