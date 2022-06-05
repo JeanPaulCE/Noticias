@@ -21,11 +21,11 @@ const buttons = [
 </script>
 
 <template>
-<div class="mx-2" :class="{ 'mg--4': !isMobile() }">
+<section>
 
-  <h2 class="mb-2">Nuevo</h2>
+  <h2 class="mg--4 mb-2 " :class="{ 'mx-2': isMobile()}">Nuevo</h2>
 
-    <div class="mb-2">
+    <div class="mb-2 ">
       <ButtonGroupThree 
       :buttons="buttons"
       />
@@ -34,10 +34,10 @@ const buttons = [
 
   <!-- contenido -->
 
-  <div class="">
+  <div class="mg--4" :class="{ 'mx-2': isMobile()}">
 
-      <div class="row">
-        <div class="row mb-3">
+      <div class="row gy-3">
+        <!-- <div class="row mb-3 "> -->
           <div class="col-md-6 col-sm-12">
             <Input
               class="w-100"
@@ -52,9 +52,9 @@ const buttons = [
               type="text"
             ></Input>
           </div>
-        </div>
+        <!-- </div> -->
 
-        <div class="row">
+        <!-- <div class="row"> -->
           <div class="col-md-6 col-sm-12">
             <label class="form-label text-white fs-4 fw-bold opacity-50 mb-1" for="">Contenido</label>
             <textarea class="w-100 txt-area fs-5" name="" id=""  rows="10"></textarea>
@@ -66,7 +66,7 @@ const buttons = [
               type="file"
             ></Input>
           </div>
-        </div>
+        <!-- </div> -->
         
         
       </div>
@@ -76,7 +76,7 @@ const buttons = [
 
   <!-- contenido -->
   
-</div>
+</section>
   
 
 </template>
