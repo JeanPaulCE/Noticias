@@ -28,7 +28,7 @@ function doLike(likes) {
 
 <template>
   <div class="row">
-    <div class="col-sm-1 col-2 d-flex">
+    <div class="col-sm-1 col-1 d-flex bg-success">
       <button @click="doLike(likes)" class="btn">
         <div class="container_ico" v-if="isLike == false">
           <i class="ico bi bi-heart"></i>
@@ -39,7 +39,7 @@ function doLike(likes) {
         </div>
       </button>
     </div>
-    <div class="col-sm-11 col-10">
+    <div class="col-sm-11 col-11 bg-primary">
       <p class="fw-bold">{{ likes }}</p>
     </div>
   </div>
