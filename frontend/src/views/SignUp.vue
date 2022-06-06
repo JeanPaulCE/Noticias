@@ -23,10 +23,10 @@ const buttons = [
 			¡Registrate para ver las últimas noticias!
 		</p>
 		<form class="row gx-3 gy-2 mb-3">
-			<Input label="Nombre de usuario" type="text" />
-			<Input label="Correo electrónico" type="email" />
-			<Input label="Contraseña" type="password" />
-			<Input label="Confirmar contraseña" type="password" />
+			<Input label="Nombre de usuario" type="text" class="col-md-6" />
+			<Input label="Correo electrónico" type="email" class="col-md-6" />
+			<Input label="Contraseña" type="password" class="col-md-6" />
+			<Input label="Confirmar contraseña" type="password" class="col-md-6" />
 			<div v-for="item in buttons" class="col-md-6">
 				<Button v-bind="item" class="w-100" />
 			</div>
