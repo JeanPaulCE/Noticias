@@ -1,19 +1,20 @@
 <script setup>
-import Like from "../components/Like.vue";
-import { ref, computed } from "vue";
-import isMobile from '../helpers/isMobile';
-import Gallery from "../layouts/Gallery.vue";
-import { useRoute, useRouter } from "vue-router";
+  import Like from "../components/Like.vue";
+  import { ref, computed } from "vue";
+  import isMobile from '../helpers/isMobile';
+  import Gallery from "../layouts/Gallery.vue";
+  import { useRoute, useRouter } from "vue-router";
 
-const props = defineProps({
-  news: Array,
-});
-console.log(props.news);
-const route = useRoute();
-const item = computed(() => {
-  const selectedNew = props.news[route.params.id];
-  return selectedNew;
-});
+  const props = defineProps({
+    news: Array,
+  });
+  console.log(props.news);
+  const route = useRoute();
+  const item = computed(() => {
+    const selectedNew = props.news[route.params.id];
+    return selectedNew;
+  });
+
 </script>
 
 <template>

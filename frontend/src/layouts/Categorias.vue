@@ -70,6 +70,11 @@ function filtrar(letra) {
   });
 }
 
+function select(cat){
+  console.log("Se seleccionó => "+cat);
+  this.$emit('select', cat);
+}
+
 onMounted(() => {
   Crearfiltro();
   lateralScroll(t_filtro.value);
@@ -94,7 +99,7 @@ onMounted(() => {
     <div ref="t_categorias" class="list-categoria py-1">
       <button
         v-for="cat in categoriasVisibles"
-        v-on:click="select(cat)"
+        v-on:click="$emit('select', cat)"
         :id="cat"
         class="item-categoria mx-2"
       >

@@ -5,12 +5,16 @@ import Gallery from "../layouts/Gallery.vue";
 const props = defineProps({
   news: Array,
 });
+
+function prueba(cat){
+  console.log("Llegó la categoría => "+cat);
+}
 </script>
 
 <template>
   <div class="container-fluid pb-4">
     <h1 class="fw-bold">Categorías</h1>
-    <Categorias></Categorias>
+    <Categorias @select="prueba"></Categorias>
     <Gallery :news="news"></Gallery>
   </div>
 </template>
