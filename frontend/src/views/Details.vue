@@ -1,19 +1,41 @@
 <script setup>
   import Like from "../components/Like.vue";
-  import { ref, computed } from "vue";
+  import { ref, computed,onMounted } from "vue";
   import isMobile from '../helpers/isMobile';
   import Gallery from "../layouts/Gallery.vue";
-  import { useRoute, useRouter } from "vue-router";
+  import { useRoute } from "vue-router";
+  import fetchAPI from "../helpers/fetchAPI";
 
   const props = defineProps({
-    news: Array,
+    news3: Array,
   });
-  console.log(props.news);
+
+  const news =ref([]);
+  const selectedNew = ref([]);
   const route = useRoute();
-  const item = computed(() => {
+
+  onMounted(() => {
+    fetchAPI("/news")
+    .then((data) => {
+      selectedNew.value = data[route.params.id];
+      console.log( selectedNew.value.likes);
+
+      news.value = data;
+
+      news.value = news.value.filter((item, index) => {
+        if(item.id!=selectedNew.value.id){
+          return item.category === selectedNew.value.category
+        }
+      });
+
+      console.log(news.value);
+    });
+  });
+
+  /*const selectedNew = computed(() => {
     const selectedNew = props.news[route.params.id];
     return selectedNew;
-  });
+  });*/
 
 </script>
 
@@ -22,25 +44,25 @@
     <div :class="{ 'mg--4': !isMobile(),'px-1': isMobile()}">
       <div class="container-fluid mt-3">
         <div class="overflow"> 
-          <img class="w-100" :src="item.image" alt="" />
+          <img class="w-100" :src="selectedNew.image" alt="" />
         </div>
-        <h2 class="fw-bold mt-3">{{ item.title }}</h2>
+        <h2 class="fw-bold mt-3">{{ selectedNew.title }}</h2>
       </div>
       <div class="container-fluid mt-1">
         <p class="opacity-50">
-          {{ item.date }} | Por: {{ item.Autor }} | {{ item.category }}
+          {{ selectedNew.date }} | Por: {{ selectedNew.Autor }} | {{ selectedNew.category }}
         </p>
-        <p class="mt-2">{{ item.content }}</p>
+        <p class="mt-2">{{ selectedNew.content }}</p>
       </div>
       <div class="container mt-2">
-        <Like :likes="item.likes"></Like>
+        <Like :likes="selectedNew.likes"></Like>
       </div>
         <h3 class="container-fluid  my-3 fw-bold">Noticias relacionadas</h3>
     </div>
   </div>
 
   <div >
-    <Gallery :news="news"></Gallery>
+    <Gallery class="mb-3" :news="news"></Gallery>
   </div>
 </template>
 

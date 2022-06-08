@@ -12,6 +12,7 @@ onMounted(() => {
     news.value = data;
   });
 });
+
 </script>
 
 <template>

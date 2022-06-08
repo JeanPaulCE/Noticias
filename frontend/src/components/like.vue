@@ -1,34 +1,28 @@
 <script setup>
 import { ref } from "vue";
-import { computed } from "vue";
+
 const isLike = ref(false);
-//const like = ref(3);
 
 const props = defineProps({
   likes: Number,
 });
 
+const like = ref(props.likes);
 
-let realLikes = computed(() => {
-  let realLikes = props.likes;
-  return realLikes;
-});
+console.log(like);
+//console.log(like.value);
 
-console.log(realLikes);
 
 function doLike(likes) {
-  console.log(likes);
+  //console.log(likes);
   if (isLike.value == false) {
     isLike.value = true;
-    likes++;
-    realLikes++;
-    //console.log(isLike.value);
+    like.value++;
   } else {
     isLike.value = false;
-    likes--;
-    realLikes--;
-    //console.log(isLike.value);
+    like.value--; 
   }
+  console.log(like.value);
 }
 </script>
 
@@ -44,7 +38,7 @@ function doLike(likes) {
           <i class="bi bi-heart-fill"></i>
         </div>
       </button>
-      <p class="fw-bold ps-2">{{ realLikes }}</p>
+      <p class="fw-bold ps-2">{{ like }}</p>
     </div>
   </div>
 </template>

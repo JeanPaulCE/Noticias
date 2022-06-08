@@ -3,8 +3,12 @@ import { onMounted, ref } from "vue";
 import isMobile from "../helpers/isMobile";
 import lateralScroll from "../helpers/lateralScroll";
 import uniq from "../helpers/unique";
+import fetchAPI from "../helpers/fetchAPI";
+
+const categorias2 = ref([]);
 
 const categorias = ref([
+  "Todas",
   "Acción",
   "Acción",
   "Acción",
@@ -40,7 +44,7 @@ const categorias = ref([
   "Otros",
   "PS Network",
   "Plataformas",
-  "Puzle",
+  "Puzzle",
   "Realidad Virtual",
   "Rol",
   "Shooter",
@@ -71,15 +75,27 @@ function filtrar(letra) {
 }
 
 function select(cat){
-  console.log("Se seleccionó => "+cat);
   this.$emit('select', cat);
 }
 
 onMounted(() => {
+
+  /*fetchAPI("/news")
+  .then((data) => {
+
+    for(const i=ref(0); i.value<data.length; i.value++){
+      //console.log(i.value);
+      categorias2.value.push(data[i.value].category);
+    }
+
+    console.log(categorias2.value);
+  });*/
+
   Crearfiltro();
   lateralScroll(t_filtro.value);
   lateralScroll(t_categorias.value);
   filtrar(filtro.value[0]);
+
 });
 </script>
 

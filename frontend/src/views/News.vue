@@ -1,13 +1,34 @@
 <script setup>
 import Categorias from "../layouts/Categorias.vue";
 import Gallery from "../layouts/Gallery.vue";
+import { ref, onMounted } from "vue";
+import fetchAPI from "../helpers/fetchAPI";
 
-const props = defineProps({
-  news: Array,
+
+const news = ref([]);
+const newsBackUp = ref([]);
+
+onMounted(() => {
+  fetchAPI("/news")
+  .then((data) => {
+    newsBackUp.value = data;
+    news.value = newsBackUp.value;
+  });
 });
 
+
 function prueba(cat){
-  console.log("Llegó la categoría => "+cat);
+  
+  news.value=newsBackUp.value;
+  news.value = news.value.filter((item, index) => {
+    return item.category === cat
+  });
+
+  if(cat=="Todas"){
+    news.value=newsBackUp.value;
+  }
+  /*console.log(typeof cat);
+  console.log(news.value);*/
 }
 </script>
 
