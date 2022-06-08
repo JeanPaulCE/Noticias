@@ -2,34 +2,20 @@
 import { ref } from "vue";
 
 const isLike = ref(false);
-
-const props = defineProps({
-  likes: Number,
-});
-
-const like = ref(props.likes);
-
-console.log(like);
-//console.log(like.value);
+;
 
 
-function doLike(likes) {
-  //console.log(likes);
+function doLike() {
   if (isLike.value == false) {
     isLike.value = true;
-    like.value++;
   } else {
     isLike.value = false;
-    like.value--; 
   }
-  console.log(like.value);
 }
 </script>
 
 <template>
-  <div class="row">
-    <div class="col-sm-2 col-4 d-flex">
-      <button @click="doLike(likes)" class="btn">
+      <button @click="doLike(), $emit('doLike',isLike)" class="btn">
         <div class="container_ico" v-if="isLike == false">
           <i class="ico bi bi-heart"></i>
         </div>
@@ -38,9 +24,6 @@ function doLike(likes) {
           <i class="bi bi-heart-fill"></i>
         </div>
       </button>
-      <p class="fw-bold ps-2">{{ like }}</p>
-    </div>
-  </div>
 </template>
 
 <style lang="scss" scoped>
@@ -68,7 +51,4 @@ function doLike(likes) {
   box-shadow: none;
 }
 
-p {
-  font-size: 1.5rem;
-}
 </style>

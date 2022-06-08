@@ -19,9 +19,7 @@
     .then((data) => {
       selectedNew.value = data[route.params.id];
       console.log( selectedNew.value.likes);
-
       news.value = data;
-
       news.value = news.value.filter((item, index) => {
         if(item.id!=selectedNew.value.id){
           return item.category === selectedNew.value.category
@@ -32,10 +30,13 @@
     });
   });
 
-  /*const selectedNew = computed(() => {
-    const selectedNew = props.news[route.params.id];
-    return selectedNew;
-  });*/
+  function prueba(isLike){
+    if(isLike){
+      selectedNew.value.likes++;
+    }else{
+      selectedNew.value.likes--;
+    }
+  }
 
 </script>
 
@@ -55,7 +56,12 @@
         <p class="mt-2">{{ selectedNew.content }}</p>
       </div>
       <div class="container mt-2">
-        <Like :likes="selectedNew.likes"></Like>
+        <div class="row">
+          <div class="col-sm-2 col-4 d-flex">
+            <Like @doLike="prueba" :likes="selectedNew.likes"></Like>
+            <p class="ms-2 fw-bold mt-1 p-like">{{selectedNew.likes}}</p>
+          </div>
+        </div>
       </div>
         <h3 class="container-fluid  my-3 fw-bold">Noticias relacionadas</h3>
     </div>
@@ -72,6 +78,9 @@
   padding-right: 1.25rem;
 }
 
+.p-like{
+  font-size: 1rem;
+}
 
 
 @media (min-width: 768px) {
@@ -79,6 +88,10 @@
   .overflow{
     height: 65vh;
 	  overflow: hidden;
+  }
+
+  .p-like{
+    font-size: 1.25rem;
   }
 }
 
