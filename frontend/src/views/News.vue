@@ -17,25 +17,23 @@ onMounted(() => {
 });
 
 
-function prueba(cat){
+function filterCategory(category){
   
   news.value=newsBackUp.value;
   news.value = news.value.filter((item, index) => {
-    return item.category === cat
+    return item.category === category
   });
 
-  if(cat=="Todas"){
+  if(category=="Todas"){
     news.value=newsBackUp.value;
   }
-  /*console.log(typeof cat);
-  console.log(news.value);*/
 }
 </script>
 
 <template>
   <div class="container-fluid pb-4">
     <h1 class="fw-bold">Categorías</h1>
-    <Categorias @select="prueba"></Categorias>
+    <Categorias @selectCategory="filterCategory"></Categorias>
     <Gallery :news="news"></Gallery>
   </div>
 </template>

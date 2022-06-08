@@ -1,14 +1,11 @@
 <script setup>
   import Like from "../components/Like.vue";
-  import { ref, computed,onMounted } from "vue";
+  import { ref,onMounted } from "vue";
   import isMobile from '../helpers/isMobile';
   import Gallery from "../layouts/Gallery.vue";
   import { useRoute } from "vue-router";
   import fetchAPI from "../helpers/fetchAPI";
 
-  const props = defineProps({
-    news3: Array,
-  });
 
   const news =ref([]);
   const selectedNew = ref([]);
@@ -18,15 +15,12 @@
     fetchAPI("/news")
     .then((data) => {
       selectedNew.value = data[route.params.id];
-      console.log( selectedNew.value.likes);
       news.value = data;
       news.value = news.value.filter((item, index) => {
         if(item.id!=selectedNew.value.id){
           return item.category === selectedNew.value.category
         }
       });
-
-      console.log(news.value);
     });
   });
 

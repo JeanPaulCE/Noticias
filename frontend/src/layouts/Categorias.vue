@@ -74,10 +74,6 @@ function filtrar(letra) {
   });
 }
 
-function select(cat){
-  this.$emit('select', cat);
-}
-
 onMounted(() => {
 
   /*fetchAPI("/news")
@@ -115,7 +111,7 @@ onMounted(() => {
     <div ref="t_categorias" class="list-categoria py-1">
       <button
         v-for="cat in categoriasVisibles"
-        v-on:click="$emit('select', cat)"
+        v-on:click="$emit('selectCategory', cat)"
         :id="cat"
         class="item-categoria mx-2"
       >
