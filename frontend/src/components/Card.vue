@@ -23,14 +23,14 @@ function position(index) {
   }
 }
 
-function clicked(index) {
+function clicked(id) {
   window.scrollTo(0, 0);
-  router.push({ name: "Details", params: { id: index } });
+  router.push({ name: "Details", params: { id: id } });
 }
 </script>
 
 <template>
-  <div v-on:click="clicked(index)" :class="position(index)">
+  <div v-on:click="clicked(id)" :class="position(index)">
     <div class="">
       <div class="">
         <h3>{{ title }}</h3>

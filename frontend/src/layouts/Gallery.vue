@@ -20,7 +20,7 @@ const props = defineProps({
         :class="{ '': !isMobile() }"
         class="col-md-4 col-sm-12 p-0 my-2 position-relative"
       >
-        <Card v-on:click="$emit('clickCard',item.id)" v-bind="item" :index="item.id-1" />
+        <Card v-on:click="$emit('clickCard',item.id)" v-bind="item" :index="index" :id="item.id-1" />
       </div>
     </div>
 </template>
