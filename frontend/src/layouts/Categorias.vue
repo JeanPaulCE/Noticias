@@ -9,7 +9,6 @@ const categorias2 = ref([]);
 
 const categorias = ref([
   "Todas",
-
   "Acción",
   "Aventura",
   "Aventura Gráfica",
