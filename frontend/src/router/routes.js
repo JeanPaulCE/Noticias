@@ -7,6 +7,8 @@ import Profile from "../views/Profile.vue";
 import AdminProfile from "../views/AdminProfile.vue";
 import Publication from "../views/AdminPublication.vue";
 import PageNotFound from "../views/PageNotFound.vue";
+import AdminList from "../views/AdminList.vue";
+
 
 export default [
   {
@@ -57,5 +59,10 @@ export default [
     path: "/:pathMatch(.*)*",
     component: "PageNotFound",
     component: PageNotFound,
+  },
+  {
+    path: "/admin-lista",
+    name: "AdminList",
+    component: AdminList,
   },
 ];
