@@ -11,6 +11,10 @@
   const selectedNew = ref([]);
   const route = useRoute();
 
+  const props = defineProps({
+    news: Array,
+  });
+
   onMounted(() => {
     fetchAPI("/news")
     .then((data) => {
@@ -30,6 +34,20 @@
     }else{
       selectedNew.value.likes--;
     }
+  }
+
+  function refreshContent(index){
+    console.log("Llego a details => "+index);
+    fetchAPI("/news")
+    .then((data) => {
+      selectedNew.value = data[index-1];
+      news.value = data;
+      news.value = news.value.filter((item, index) => {
+        if(item.id!=selectedNew.value.id){
+          return item.category === selectedNew.value.category
+        }
+      });
+    });
   }
 
 </script>
@@ -62,7 +80,7 @@
   </div>
 
   <div >
-    <Gallery class="mb-3" :news="news"></Gallery>
+    <Gallery @clickCard="refreshContent" class="mb-3" :news="news"></Gallery>
   </div>
 </template>
 

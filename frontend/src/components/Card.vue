@@ -23,9 +23,9 @@ function position(index) {
   }
 }
 
-function clicked(index) {
+function clicked(id) {
   window.scrollTo(0, 0);
-  router.push({ name: "Details", params: { id: index } });
+  router.push({ name: "Details", params: { id: id } });
 }
 </script>
 
