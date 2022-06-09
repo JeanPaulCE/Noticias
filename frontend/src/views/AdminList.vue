@@ -25,14 +25,36 @@ function filterCategory(category) {
     news.value = newsBackUp.value;
   }
 }
+
+
+const buttons = [
+  {
+    msg: "Perfil",
+    class: "btn-red",
+  },
+  {
+    msg: "Lista",
+    class: "btn-border",
+  },
+  {
+    msg: "Nuevo",
+    class: "btn-border",
+  },
+];
 </script>
 
 <template>
   <section>
+      <div class="mb-2 ">
+      <ButtonGroupThree 
+      :buttons="buttons"
+      />
+    </div>
+    
     <h2 class="mg--4 mb-2" :class="{ 'mx-2': isMobile() }">Lista</h2>
 
     <Categorias @selectCategory="filterCategory"></Categorias>
-    <Gallery :news="news"></Gallery>
+    <Gallery :news="news" direction="Publication"></Gallery>
   </section>
 </template>
 

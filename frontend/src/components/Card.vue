@@ -9,6 +9,7 @@ const props = defineProps({
   title: String,
   image: String,
   index: Number,
+  direction:String,
 });
 
 function position(index) {
@@ -25,7 +26,7 @@ function position(index) {
 
 function clicked(id) {
   window.scrollTo(0, 0);
-  router.push({ name: "Details", params: { id: id } });
+  router.push({ name: props.direction, params: { id: id } });
 }
 </script>
 
