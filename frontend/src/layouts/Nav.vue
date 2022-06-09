@@ -26,7 +26,7 @@ const mobile = ref(isMobile());
           <router-link class="nav-link" to="/noticias">Noticias</router-link>
         </li>
         <li class="nav-item p-1">
-          <router-link class="nav-link" to="/admin-perfil">Perfil</router-link>
+          <router-link class="nav-link" to="/perfil">Perfil</router-link>
         </li>
       </ul>
       <form class="d-flex">

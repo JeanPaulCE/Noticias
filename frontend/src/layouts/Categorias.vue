@@ -3,31 +3,13 @@ import { onMounted, ref } from "vue";
 import isMobile from "../helpers/isMobile";
 import lateralScroll from "../helpers/lateralScroll";
 import uniq from "../helpers/unique";
+import fetchAPI from "../helpers/fetchAPI";
+
+const categorias2 = ref([]);
 
 const categorias = ref([
-  "Acción",
-  "Acción",
-  "Acción",
-  "Acción",
-  "Acción",
-  "Acción",
-  "Acción",
-  "Acción",
-  "Acción",
-  "Acción",
-  "Acción",
-  "Aventura",
-  "Aventura Gráfica",
-  "Acción",
-  "Acción",
-  "Acción",
-  "Acción",
-  "Acción",
-  "Acción",
-  "Acción",
-  "Acción",
-  "Acción",
-  "Acción",
+  "Todas",
+
   "Acción",
   "Aventura",
   "Aventura Gráfica",
@@ -37,10 +19,8 @@ const categorias = ref([
   "Lucha",
   "Multijugador Online",
   "Musical",
-  "Otros",
-  "PS Network",
   "Plataformas",
-  "Puzle",
+  "Puzzle",
   "Realidad Virtual",
   "Rol",
   "Shooter",
@@ -48,6 +28,7 @@ const categorias = ref([
   "Velocidad",
   "Xbox Live Arcade",
 ]);
+
 const filtro = ref([]);
 const categoriasVisibles = ref([]);
 const t_filtro = ref(null);
@@ -71,10 +52,23 @@ function filtrar(letra) {
 }
 
 onMounted(() => {
+
+  /*fetchAPI("/news")
+  .then((data) => {
+
+    for(const i=ref(0); i.value<data.length; i.value++){
+      //console.log(i.value);
+      categorias2.value.push(data[i.value].category);
+    }
+
+    console.log(categorias2.value);
+  });*/
+
   Crearfiltro();
   lateralScroll(t_filtro.value);
   lateralScroll(t_categorias.value);
   filtrar(filtro.value[0]);
+
 });
 </script>
 
@@ -94,7 +88,7 @@ onMounted(() => {
     <div ref="t_categorias" class="list-categoria py-1">
       <button
         v-for="cat in categoriasVisibles"
-        v-on:click="select(cat)"
+        v-on:click="$emit('selectCategory', cat)"
         :id="cat"
         class="item-categoria mx-2"
       >

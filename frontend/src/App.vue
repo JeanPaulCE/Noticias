@@ -12,6 +12,7 @@ onMounted(() => {
     news.value = data;
   });
 });
+
 </script>
 
 <template>
@@ -94,7 +95,7 @@ onMounted(() => {
             />
           </svg>
 
-          <router-link class="link row" to="/admin-perfil">Perfil</router-link>
+          <router-link class="link row" to="/perfil">Perfil</router-link>
         </li>
       </ul>
     </div>

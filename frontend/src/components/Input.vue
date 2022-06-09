@@ -8,7 +8,7 @@ const props = defineProps({
 </script>
 
 <template>
-  <div class="col-md-6">
+  <div class="col-md">
     <label
       :for="type"
       v-if="label"

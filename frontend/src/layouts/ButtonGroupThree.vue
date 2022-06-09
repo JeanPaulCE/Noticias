@@ -3,24 +3,21 @@ import Button from "../components/Button.vue";
 import isMobile from "../helpers/isMobile";
 
 const props = defineProps({
-	buttons: Array,
+  buttons: Array,
 });
 
 function click(btnIndex) {
   for (let index = 0; index < buttons.value.length; index++) {
     if (btnIndex == index) {
-      buttons.value[index].class = "btn-red";
+      props.buttons.value[index].class = "btn-red";
     } else {
-      buttons.value[index].class = "btn-border";
+      props.buttons.value[index].class = "btn-border";
     }
   }
 }
 </script>
 <template>
-  <div
-    :class="{ 'mg--4': !isMobile(), 'mx-2': isMobile() }"
-    class="row gx-2"
-  >
+  <div :class="{ 'mg--4': !isMobile(), 'mx-2': isMobile() }" class="row gx-2">
     <div v-for="(item, index) in buttons" class="col-4">
       <Button
         @click="click(index)"
@@ -33,6 +30,4 @@ function click(btnIndex) {
   </div>
 </template>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>
