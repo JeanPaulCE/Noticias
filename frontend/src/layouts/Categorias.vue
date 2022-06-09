@@ -52,6 +52,7 @@ const categorias = ref([
   "Velocidad",
   "Xbox Live Arcade",
 ]);
+
 const filtro = ref([]);
 const categoriasVisibles = ref([]);
 const t_filtro = ref(null);

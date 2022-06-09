@@ -4,28 +4,24 @@ import Gallery from "../layouts/Gallery.vue";
 import { ref, onMounted } from "vue";
 import fetchAPI from "../helpers/fetchAPI";
 
-
 const news = ref([]);
 const newsBackUp = ref([]);
 
 onMounted(() => {
-  fetchAPI("/news")
-  .then((data) => {
+  fetchAPI("/news").then((data) => {
     newsBackUp.value = data;
     news.value = newsBackUp.value;
   });
 });
 
-
-function filterCategory(category){
-  
-  news.value=newsBackUp.value;
+function filterCategory(category) {
+  news.value = newsBackUp.value;
   news.value = news.value.filter((item, index) => {
-    return item.category === category
+    return item.category === category;
   });
 
-  if(category=="Todas"){
-    news.value=newsBackUp.value;
+  if (category == "Todas") {
+    news.value = newsBackUp.value;
   }
 }
 </script>
@@ -39,10 +35,10 @@ function filterCategory(category){
 </template>
 
 <style lang="scss" scoped>
-  @media (min-width: 768px) {
-    h1{
-      font-size: 2.375rem;
-      padding-left: 3rem;
-    }
+@media (min-width: 768px) {
+  h1 {
+    font-size: 2.375rem;
+    padding-left: 3rem;
   }
+}
 </style>
