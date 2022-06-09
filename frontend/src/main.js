@@ -5,3 +5,5 @@ import router from "./router/index";
 import isMobile from "./helpers/isMobile";
 
 createApp(App).use(router).mount("#app");
+
+import 'bootstrap/dist/js/bootstrap.bundle.js';
