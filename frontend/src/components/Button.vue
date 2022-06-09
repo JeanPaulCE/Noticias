@@ -1,40 +1,38 @@
 <script setup>
 const props = defineProps({
-	type: String,
-	msg: String,
-	url: String,
+  type: String,
+  msg: String,
+  url: String,
 });
 
-function clicked() {
-	console.log(props.url);
-}
+function clicked() {}
 </script>
 
 <template>
-	<button @click="clicked" :class="type">{{ msg }}</button>
+  <button @click="clicked" :class="type">{{ msg }}</button>
 </template>
 
 <style lang="scss" scoped>
-@use '../assets/sass/spacing';
-@use '../assets/sass/vars';
+@use "../assets/sass/spacing";
+@use "../assets/sass/vars";
 
 button {
-	border-style: hidden;
-	border-radius: 12px;
-	height: spacing.$spacer;
-	padding: 0 calc(spacing.$spacer/2);
-	color: vars.$light;
+  border-style: hidden;
+  border-radius: 12px;
+  height: spacing.$spacer;
+  padding: 0 calc(spacing.$spacer/2);
+  color: vars.$light;
 }
 .btn-red {
-	background-color: vars.$primary;
+  background-color: vars.$primary;
 }
 .btn-border {
-	background-color: rgba(0, 0, 0, 0);
-	border-color: vars.$dark;
-	border-style: solid;
-	border-width: 1px;
+  background-color: rgba(0, 0, 0, 0);
+  border-color: vars.$dark;
+  border-style: solid;
+  border-width: 1px;
 }
 .btn-clean {
-	background-color: rgba(0, 0, 0, 0);
+  background-color: rgba(0, 0, 0, 0);
 }
 </style>
