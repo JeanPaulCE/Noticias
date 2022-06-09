@@ -30,7 +30,7 @@ function clicked(id) {
 </script>
 
 <template>
-  <div v-on:click="clicked(id)" :class="position(id)">
+  <div v-on:click="clicked(id)" :class="position(index)">
     <div class="">
       <div class="">
         <h3>{{ title }}</h3>
