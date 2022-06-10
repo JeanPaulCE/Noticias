@@ -10,7 +10,7 @@ const props = defineProps({
 });
 
 function clicked() {
-  if (props.url.length > 0) {
+  if (props.url) {
     window.scrollTo(0, 0);
     router.push(props.url);
   }
