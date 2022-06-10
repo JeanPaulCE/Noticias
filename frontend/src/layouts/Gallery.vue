@@ -6,7 +6,11 @@ const props = defineProps({
   news: Array,
   direction: {
     type: String,
-    default: "Details"
+    default: "Details",
+  },
+  msg: {
+    type: String,
+    default: "ver más",
   },
 });
 </script>
@@ -26,6 +30,7 @@ const props = defineProps({
         v-bind="item"
         :index="index"
         :direction="direction"
+        :btn="msg"
       />
     </div>
   </div>

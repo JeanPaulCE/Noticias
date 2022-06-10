@@ -51,7 +51,6 @@ function filtrar(letra) {
 }
 
 onMounted(() => {
-
   /*fetchAPI("/news")
   .then((data) => {
 
@@ -67,7 +66,6 @@ onMounted(() => {
   lateralScroll(t_filtro.value);
   lateralScroll(t_categorias.value);
   filtrar(filtro.value[0]);
-
 });
 </script>
 

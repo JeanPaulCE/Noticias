@@ -4,6 +4,7 @@ import Gallery from "../layouts/Gallery.vue";
 import isMobile from "../helpers/isMobile";
 import { ref, onMounted } from "vue";
 import fetchAPI from "../helpers/fetchAPI";
+import ButtonGroupThree from "../layouts/ButtonGroupThree.vue";
 
 const news = ref([]);
 const newsBackUp = ref([]);
@@ -26,38 +27,34 @@ function filterCategory(category) {
   }
 }
 
-
 const buttons = [
   {
     msg: "Perfil",
-    class: "btn-red",
+    class: "btn-border",
+    url: "/admin-perfil",
   },
   {
     msg: "Lista",
-    class: "btn-border",
+    class: "btn-red",
+    url: "/admin-lista",
   },
   {
     msg: "Nuevo",
     class: "btn-border",
+    url: "/publicacion",
   },
 ];
 </script>
 
 <template>
   <section>
-      <div class="mb-2 ">
-      <ButtonGroupThree 
-      :buttons="buttons"
-      />
-    </div>
-    
     <h2 class="mg--4 mb-2" :class="{ 'mx-2': isMobile() }">Lista</h2>
-
+    <div class="mb-2">
+      <ButtonGroupThree @cliked="cliked" :buttons="buttons" />
+    </div>
     <Categorias @selectCategory="filterCategory"></Categorias>
-    <Gallery :news="news" direction="Publication"></Gallery>
+    <Gallery :news="news" msg="editar" direction="Publication"></Gallery>
   </section>
 </template>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>

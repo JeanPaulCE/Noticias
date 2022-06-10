@@ -35,7 +35,7 @@ function click(btnIndex) {
         class="w-100"
         :msg="item.msg"
         :type="item.class"
-        url="dir"
+        :url="item.url"
       />
     </div>
   </div>

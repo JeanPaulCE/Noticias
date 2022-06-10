@@ -1,11 +1,18 @@
 <script setup>
+import { useRouter } from "vue-router";
+
+const router = useRouter();
+
 const props = defineProps({
   type: String,
   msg: String,
   url: String,
 });
 
-function clicked() {}
+function clicked() {
+  window.scrollTo(0, 0);
+  router.push(props.url);
+}
 </script>
 
 <template>
