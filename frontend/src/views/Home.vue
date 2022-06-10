@@ -21,11 +21,15 @@ const buttons = [
     class: "btn-border",
   },
 ];
+function buttonsCliked(index) {
+  console.log("boton presionado " + index);
+}
 </script>
 
 <template>
   <section>
     <ButtonGroupThree
+      @cliked="buttonsCliked"
       class="mt-2"
       :class="{ 'mg--4': !isMobile() }"
       :buttons="buttons"
