@@ -2,6 +2,8 @@
 import ButtonGroupThree from "../layouts/ButtonGroupThree.vue";
 import Input from "../components/Input.vue";
 import isMobile from "../helpers/isMobile";
+import Button from "../components/Button.vue";
+
 
 import { ref, onMounted } from "vue";
 import { useRoute } from "vue-router";
@@ -54,7 +56,7 @@ const buttons = [
     </div>
     <!-- contenido -->
 
-    <div class="mg--4 inputs" :class="{ 'mx-2': isMobile() }">
+    <div class="mg--4 inputs " :class="{ 'mx-2': isMobile() }">
       <div class="row gy-3">
         <!-- <div class="row mb-3 "> -->
         <div class="col-md-6 col-sm-12">
@@ -87,8 +89,17 @@ const buttons = [
         <div class="col-md-6 col-sm-12">
           <Input id="file" class="w-100" label="Subir" type="file"></Input>
         </div>
-        <!-- </div> -->
+
       </div>
+
+      <!-- <div class=""> -->
+        <Button
+          class="btn-red w-25 mt-2 "
+          msg="Guardar"
+          :type="submit"
+        />
+      <!-- </div> -->
+      
     </div>
 
     <!-- contenido -->
@@ -105,5 +116,6 @@ const buttons = [
   border-radius: 0.5rem;
   color: #fff;
 }
+
 
 </style>
