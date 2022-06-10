@@ -31,10 +31,15 @@ const buttons = [
       <div class="row gy-3">
         <!-- <div class="row mb-3 "> -->
         <div class="col-md-6 col-sm-12">
-          <Input class="w-100" label="Titulo" type="text"></Input>
+          <Input id="titulo" class="w-100" label="Titulo" type="text"></Input>
         </div>
         <div class="col-md-6 col-sm-12">
-          <Input class="w-100" label="Categoria" type="text"></Input>
+          <Input
+            id="categoria"
+            class="w-100"
+            label="Categoria"
+            type="text"
+          ></Input>
         </div>
         <!-- </div> -->
 
@@ -53,7 +58,7 @@ const buttons = [
           ></textarea>
         </div>
         <div class="col-md-6 col-sm-12">
-          <Input class="w-100" label="Subir" type="file"></Input>
+          <Input id="file" class="w-100" label="Subir" type="file"></Input>
         </div>
         <!-- </div> -->
       </div>
@@ -74,8 +79,6 @@ const buttons = [
   color: #fff;
 }
 
-.inputs{
-  
+.inputs {
 }
-
 </style>
