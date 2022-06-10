@@ -6,6 +6,10 @@ import { ref, onMounted } from "vue";
 import fetchAPI from "../helpers/fetchAPI";
 import ButtonGroupThree from "../layouts/ButtonGroupThree.vue";
 
+const props = defineProps({
+  news: Array,
+});
+
 const news = ref([]);
 const newsBackUp = ref([]);
 
@@ -53,7 +57,7 @@ const buttons = [
       <ButtonGroupThree @cliked="cliked" :buttons="buttons" />
     </div>
     <Categorias @selectCategory="filterCategory"></Categorias>
-    <Gallery :news="news" msg="editar" direction="Publication"></Gallery>
+    <Gallery :news="news" msg="editar" direction="AdminEdit"></Gallery>
   </section>
 </template>
 
