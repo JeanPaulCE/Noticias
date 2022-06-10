@@ -1,5 +1,6 @@
 <script setup>
 import ButtonGroupThree from "../layouts/ButtonGroupThree.vue";
+import Button from "../components/Button.vue";
 import Input from "../components/Input.vue";
 import isMobile from "../helpers/isMobile";
 import Button from "../components/Button.vue";
@@ -90,6 +91,13 @@ const buttons = [
         </div>
         <!-- </div> -->
       </div>
+
+        <div class="row" :class="{ 'w-50 m-auto': !isMobile() }">
+          <div v-for="item in buttonsEdit" class="col-sm ">
+            <Button v-bind="item" class="w-100 mt-2" />
+          </div>
+        </div>
+
     </div>
 
     <div :class="{ 'w-25': !isMobile() }" class="row my-1 mx-auto gx-2">
