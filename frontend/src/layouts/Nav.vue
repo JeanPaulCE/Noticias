@@ -32,6 +32,7 @@ const mobile = ref(isMobile());
       <form class="d-flex">
         <Input
           class="w-100"
+          id="search"
           type="text"
           ico="/ico/buscar.svg"
           place="Buscar"

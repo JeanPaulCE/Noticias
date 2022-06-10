@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from "vue";
+import { ref, defineEmits } from "vue";
 import Button from "../components/Button.vue";
 import isMobile from "../helpers/isMobile";
 
@@ -9,8 +9,15 @@ const props = defineProps({
 
 const btns = ref(props.buttons);
 
+const emit = defineEmits({
+  cliked: (index) => {
+    if (index) return index;
+    else return false;
+  },
+});
+
 function click(btnIndex) {
-  this.$emit("clicked", btnIndex);
+  emit("cliked", btnIndex);
   for (let index = 0; index < btns.value.length; index++) {
     if (btnIndex == index) {
       btns.value[index].class = "btn-red";
