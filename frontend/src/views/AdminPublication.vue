@@ -2,6 +2,7 @@
 import ButtonGroupThree from "../layouts/ButtonGroupThree.vue";
 import Input from "../components/Input.vue";
 import isMobile from "../helpers/isMobile";
+import Button from "../components/Button.vue";
 
 import { ref, onMounted } from "vue";
 import { useRoute } from "vue-router";
@@ -44,9 +45,6 @@ const buttons = [
     url: "/publicacion",
   },
 ];
-
-
-
 </script>
 
 <template>
@@ -94,6 +92,12 @@ const buttons = [
       </div>
     </div>
 
+    <div :class="{ 'w-25': !isMobile() }" class="row my-1 mx-auto gx-2">
+      <div class="col col-sm-12 d-flex justify-content-center my-1">
+        <Button class="w-100 p-0" msg="Guardar" type="btn-red" url=""></Button>
+      </div>
+    </div>
+
     <!-- contenido -->
   </section>
 </template>
@@ -108,5 +112,4 @@ const buttons = [
   border-radius: 0.5rem;
   color: #fff;
 }
-
 </style>

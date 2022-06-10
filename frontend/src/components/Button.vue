@@ -10,8 +10,10 @@ const props = defineProps({
 });
 
 function clicked() {
-  window.scrollTo(0, 0);
-  router.push(props.url);
+  if (props.url.length > 0) {
+    window.scrollTo(0, 0);
+    router.push(props.url);
+  }
 }
 </script>
 

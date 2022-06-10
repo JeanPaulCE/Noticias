@@ -7,12 +7,12 @@ import isMobile from "../helpers/isMobile";
 const buttons = [
   {
     msg: "Perfil",
-    class: "btn-border",
+    class: "btn-red",
     url: "/admin-perfil",
   },
   {
     msg: "Lista",
-    class: "btn-red",
+    class: "btn-border",
     url: "/admin-lista",
   },
   {

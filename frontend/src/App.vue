@@ -100,7 +100,7 @@ onMounted(() => {
     </div>
   </div>
 
-  <Footer />
+  <Footer :class="{ 'pb-5': isMobile() }" />
 </template>
 
 <style lang="scss" scoped>
