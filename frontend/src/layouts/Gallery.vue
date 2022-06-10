@@ -4,6 +4,10 @@ import isMobile from "../helpers/isMobile";
 
 const props = defineProps({
   news: Array,
+  direction: {
+    type: String,
+    default: "Details"
+  },
 });
 </script>
 
@@ -21,6 +25,7 @@ const props = defineProps({
         v-on:click="$emit('clickCard', item.id)"
         v-bind="item"
         :index="index"
+        :direction="direction"
       />
     </div>
   </div>
