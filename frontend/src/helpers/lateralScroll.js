@@ -1,3 +1,4 @@
+import isMobile from "./isMobile";
 export default function lateralScroll(element) {
   const item = element;
   let isDown = false;
@@ -15,8 +16,10 @@ export default function lateralScroll(element) {
   item.addEventListener("mouseover", (e) => {
     mouseH = true;
     console.log("hover");
-    document.body.style.overflow = "hidden";
-    document.body.style.userSelect = "none";
+    if (!isMobile()) {
+      document.body.style.overflow = "hidden";
+      document.body.style.userSelect = "none";
+    }
   });
   item.addEventListener("mouseleave", () => {
     mouseH = false;

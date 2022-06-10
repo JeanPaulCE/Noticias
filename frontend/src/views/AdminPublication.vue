@@ -32,15 +32,18 @@ onMounted(() => {
 const buttons = [
   {
     msg: "Perfil",
-    class: "btn-red",
+    class: "btn-border",
+    url: "/admin-perfil",
   },
   {
     msg: "Lista",
     class: "btn-border",
+    url: "/admin-lista",
   },
   {
     msg: "Nuevo",
-    class: "btn-border",
+    class: "btn-red",
+    url: "/publicacion",
   },
 ];
 

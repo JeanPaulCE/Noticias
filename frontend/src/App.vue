@@ -12,7 +12,6 @@ onMounted(() => {
     news.value = data;
   });
 });
-
 </script>
 
 <template>
@@ -106,6 +105,10 @@ onMounted(() => {
 
 <style lang="scss" scoped>
 @use "./assets/sass/spacing";
+
+ul {
+  list-style: none;
+}
 
 main {
   min-height: 80vh;

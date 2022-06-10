@@ -1,6 +1,6 @@
 <script setup>
-import { useRouter } from "vue-router";
 import isMobile from "../helpers/isMobile";
+import { useRouter } from "vue-router";
 
 const router = useRouter();
 
@@ -9,7 +9,11 @@ const props = defineProps({
   title: String,
   image: String,
   index: Number,
-  direction:String,
+  direction: String,
+  btn: {
+    type: String,
+    default: "ver más",
+  },
 });
 
 function position(index) {
@@ -37,7 +41,7 @@ function clicked(id) {
         <h3>{{ title }}</h3>
         <div class="line"></div>
         <img class="w-100" :src="image" :alt="title" loading="lazy" />
-        <button>ver más</button>
+        <button>{{ btn }}</button>
       </div>
     </div>
   </div>
