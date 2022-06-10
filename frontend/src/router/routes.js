@@ -8,6 +8,7 @@ import AdminProfile from "../views/AdminProfile.vue";
 import Publication from "../views/AdminPublication.vue";
 import PageNotFound from "../views/PageNotFound.vue";
 import AdminList from "../views/AdminList.vue";
+import AdminEdit from "../views/AdminEdit.vue";
 
 
 export default [
@@ -65,4 +66,10 @@ export default [
     name: "AdminList",
     component: AdminList,
   },
+  {
+    path: "/editar-publicacion/:id",
+    name: "AdminEdit",
+    component: AdminEdit,
+  },
+  
 ];

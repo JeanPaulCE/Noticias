@@ -5,6 +5,10 @@ import isMobile from "../helpers/isMobile";
 import { ref, onMounted } from "vue";
 import fetchAPI from "../helpers/fetchAPI";
 
+const props = defineProps({
+  news: Array,
+});
+
 const news = ref([]);
 const newsBackUp = ref([]);
 
@@ -45,16 +49,11 @@ const buttons = [
 
 <template>
   <section>
-      <div class="mb-2 ">
-      <ButtonGroupThree 
-      :buttons="buttons"
-      />
-    </div>
-    
-    <h2 class="mg--4 mb-2" :class="{ 'mx-2': isMobile() }">Lista</h2>
+        <h2 class="mg--4 mb-2" :class="{ 'mx-2': isMobile() }">Lista</h2>
 
-    <Categorias @selectCategory="filterCategory"></Categorias>
-    <Gallery :news="news" direction="Publication"></Gallery>
+        <ButtonGroupThree :buttons="buttons" />
+        <Categorias @selectCategory="filterCategory"></Categorias>
+        <Gallery :news="news" direction="AdminEdit"></Gallery>
   </section>
 </template>
 
