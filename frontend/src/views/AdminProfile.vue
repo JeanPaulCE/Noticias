@@ -24,6 +24,7 @@ const buttons = [
 </script>
 
 <template>
+lol
   <section>
     <h2 class="mg--4 mb-2" :class="{ 'mx-2': isMobile() }">Perfil</h2>
 
