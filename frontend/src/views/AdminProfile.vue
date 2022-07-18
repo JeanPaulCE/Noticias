@@ -9,7 +9,7 @@ const buttons = [
     msg: "Perfil",
     class: "btn-red",
     url: "/admin-perfil",
-  },
+  },,
   {
     msg: "Lista",
     class: "btn-border",
