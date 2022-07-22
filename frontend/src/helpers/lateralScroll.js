@@ -15,7 +15,6 @@ export default function lateralScroll(element) {
 
   item.addEventListener("mouseover", (e) => {
     mouseH = true;
-    console.log("hover");
     if (!isMobile()) {
       document.body.style.overflow = "hidden";
       document.body.style.userSelect = "none";

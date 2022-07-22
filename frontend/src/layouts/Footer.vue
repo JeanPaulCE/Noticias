@@ -1,4 +1,6 @@
-<script setup></script>
+<script setup>
+function hola(params) {}
+</script>
 
 <template>
   <footer class="px-2 py-3 text-white">

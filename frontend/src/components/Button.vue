@@ -18,7 +18,9 @@ function clicked() {
 </script>
 
 <template>
-  <button @click="clicked" :class="type">{{ msg }}</button>
+  <button @click="clicked(), $emit('clicked', msg)" :class="type">
+    {{ msg }}
+  </button>
 </template>
 
 <style lang="scss" scoped>

@@ -1,10 +1,10 @@
 <script setup>
 import Like from "../components/Like.vue";
-import { ref, onMounted } from "vue";
+import { ref, onMounted, watch } from "vue";
 import isMobile from "../helpers/isMobile";
 import Gallery from "../layouts/Gallery.vue";
 import { useRoute } from "vue-router";
-import fetchAPI from "../helpers/fetchAPI";
+import api from "../helpers/ApiConection";
 
 const news = ref([]);
 const selectedNew = ref([]);
@@ -15,35 +15,49 @@ const props = defineProps({
 });
 
 onMounted(() => {
-  fetchAPI("/news").then((data) => {
-    selectedNew.value = data[route.params.id - 1];
-    news.value = data;
-    news.value = news.value.filter((item, index) => {
-      if (item.id != selectedNew.value.id) {
-        return item.category === selectedNew.value.category;
-      }
+  api.detalle({ id: route.params.id }).then((res) => {
+    selectedNew.value = res.data.new[0];
+    let date = new Date(selectedNew.value.created_at + "");
+    let m = date.getMonth();
+    let y = date.getFullYear();
+    let d = date.getDay();
+    selectedNew.value.created_at = d + "-" + m + "-" + y;
+    api.all().then((data) => {
+      var c = data.data.all;
+      var a = c.filter((item, index) => {
+        return item.categories[0].name === selectedNew.value.categories[0].name;
+      });
+      news.value = a.slice(0, 5);
+    });
+  });
+});
+
+watch(route, (to) => {
+  selectedNew.value = [];
+  api.detalle({ id: route.params.id }).then((res) => {
+    selectedNew.value = res.data.new[0];
+    let date = new Date(selectedNew.value.created_at + "");
+    let m = date.getMonth();
+    let y = date.getFullYear();
+    let d = date.getDay();
+    selectedNew.value.created_at = d + "-" + m + "-" + y;
+    api.all().then((data) => {
+      var c = data.data.all;
+      var a = c.filter((item, index) => {
+        return item.categories[0].name === selectedNew.value.categories[0].name;
+      });
+      news.value = a.slice(0, 5);
     });
   });
 });
 
 function prueba(isLike) {
+  api.like();
   if (isLike) {
-    selectedNew.value.likes++;
+    selectedNew.value.likes_count++;
   } else {
-    selectedNew.value.likes--;
+    selectedNew.value.likes_count--;
   }
-}
-
-function refreshContent(index) {
-  fetchAPI("/news").then((data) => {
-    selectedNew.value = data[index - 1];
-    news.value = data;
-    news.value = news.value.filter((item, index) => {
-      if (item.id != selectedNew.value.id) {
-        return item.category === selectedNew.value.category;
-      }
-    });
-  });
 }
 </script>
 
@@ -52,22 +66,24 @@ function refreshContent(index) {
     <div :class="{ 'mg--4': !isMobile(), 'px-1': isMobile() }">
       <div class="container-fluid mt-3">
         <div class="overflow">
-          <img class="w-100" :src="selectedNew.image" alt="" />
+          <img class="w-100" :src="api.api_url() + selectedNew.image" alt="" />
         </div>
         <h2 class="fw-bold mt-3">{{ selectedNew.title }}</h2>
       </div>
       <div class="container-fluid mt-1">
         <p class="opacity-50">
-          {{ selectedNew.date }} | Por: {{ selectedNew.Autor }} |
-          {{ selectedNew.category }}
+          {{ selectedNew.created_at }}
+          <!-- {{ selectedNew.categories[0].name }} -->
         </p>
         <p class="mt-2">{{ selectedNew.content }}</p>
       </div>
       <div class="container mt-2">
         <div class="row">
           <div class="col-sm-2 col-4 d-flex">
-            <Like @doLike="prueba" :likes="selectedNew.likes"></Like>
-            <p class="ms-2 fw-bold mt-1 p-like">{{ selectedNew.likes }}</p>
+            <Like @doLike="prueba" :likes="selectedNew.likes_count"></Like>
+            <p class="ms-2 fw-bold mt-1 p-like">
+              {{ selectedNew.likes_count }}
+            </p>
           </div>
         </div>
       </div>
@@ -76,7 +92,7 @@ function refreshContent(index) {
   </div>
 
   <div>
-    <Gallery @clickCard="refreshContent" class="mb-3" :news="news"></Gallery>
+    <Gallery class="mb-3" :news="news"></Gallery>
   </div>
 </template>
 

@@ -1,11 +1,13 @@
 <script setup>
 import isMobile from "../helpers/isMobile";
 import { useRouter } from "vue-router";
+import api from "../helpers/ApiConection";
+import { watch } from "vue";
 
 const router = useRouter();
 
 const props = defineProps({
-  id: String,
+  id: Number,
   title: String,
   image: String,
   index: Number,
@@ -28,6 +30,7 @@ function position(index) {
   }
 }
 
+
 function clicked(id) {
   window.scrollTo(0, 0);
   router.push({ name: props.direction, params: { id: id } });
@@ -40,7 +43,12 @@ function clicked(id) {
       <div class="">
         <h3>{{ title }}</h3>
         <div class="line"></div>
-        <img class="w-100" :src="image" :alt="title" loading="lazy" />
+        <img
+          class="w-100"
+          :src="api.api_url() + image"
+          :alt="title"
+          loading="lazy"
+        />
         <button>{{ btn }}</button>
       </div>
     </div>

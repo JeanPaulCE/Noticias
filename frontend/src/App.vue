@@ -4,21 +4,13 @@ import Footer from "./layouts/Footer.vue";
 import Header from "./layouts/Header.vue";
 import fetchAPI from "./helpers/fetchAPI";
 import isMobile from "./helpers/isMobile";
-
-const news = ref([]);
-
-onMounted(() => {
-  fetchAPI("/news").then((data) => {
-    news.value = data;
-  });
-});
 </script>
 
 <template>
-  <Header :news="news" />
+  <Header />
   <main class="container-fluid p-0 text-white">
     <!-- <div> -->
-    <router-view :news="news"></router-view>
+    <router-view></router-view>
     <!-- </div> -->
   </main>
   <div class="end position-fixed w-100 bottom-0" v-if="isMobile()">

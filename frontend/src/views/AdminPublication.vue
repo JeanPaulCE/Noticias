@@ -16,6 +16,14 @@ const props = defineProps({
   news: Array,
 });
 
+let categorias = {
+  categories: [
+    { id: "0", name: "categoria1" },
+    { id: "1", name: "categoria2" },
+    { id: "2", name: "categoria3" },
+  ],
+};
+
 onMounted(() => {
   fetchAPI("/news").then((data) => {
     selectedNew.value = data[route.params.id - 1];
@@ -67,6 +75,7 @@ const buttons = [
             class="w-100"
             label="Categoria"
             type="text"
+            :list="categorias"
           ></Input>
         </div>
         <!-- </div> -->

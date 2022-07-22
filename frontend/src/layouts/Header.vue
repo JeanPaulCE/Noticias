@@ -1,16 +1,14 @@
 <script setup>
 import Nav from "./Nav.vue";
 import Hero from "../layouts/Carousel.vue";
-
-const props = defineProps({
-  news: Array,
-});
+import AppVue from "../App.vue";
+import api from "../helpers/ApiConection";
 </script>
 
 <template>
   <header class="pt-1">
     <Nav></Nav>
-    <Hero :news="news" v-if="$route.path == '/'" />
+    <Hero v-if="$route.path == '/'" />
   </header>
 </template>
 

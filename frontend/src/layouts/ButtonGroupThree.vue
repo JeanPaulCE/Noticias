@@ -1,4 +1,5 @@
 <script setup>
+
 import { ref, defineEmits } from "vue";
 import Button from "../components/Button.vue";
 import isMobile from "../helpers/isMobile";
@@ -6,6 +7,7 @@ import isMobile from "../helpers/isMobile";
 const props = defineProps({
   buttons: Array,
 });
+
 
 const btns = ref(props.buttons);
 

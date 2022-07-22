@@ -2,27 +2,29 @@
 import Categorias from "../layouts/Categorias.vue";
 import Gallery from "../layouts/Gallery.vue";
 import { ref, onMounted } from "vue";
-import fetchAPI from "../helpers/fetchAPI";
+import api from "../helpers/ApiConection";
 
 const news = ref([]);
 const newsBackUp = ref([]);
-
+let filtredby = "";
 onMounted(() => {
-  fetchAPI("/news").then((data) => {
-    newsBackUp.value = data;
+  api.all().then((data) => {
+    newsBackUp.value = data.data.all;
     news.value = newsBackUp.value;
   });
 });
 
 function filterCategory(category) {
-  news.value = newsBackUp.value;
-  news.value = news.value.filter((item, index) => {
-    return item.category === category;
-  });
-
-  if (category == "Todas") {
+  category = category.name;
+  if (category != filtredby) {
+    news.value = newsBackUp.value;
+    news.value = news.value.filter((item, index) => {
+      return item.categories[0].name === category;
+    });
+  } else {
     news.value = newsBackUp.value;
   }
+  filtredby = category;
 }
 </script>
 

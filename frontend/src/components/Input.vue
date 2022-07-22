@@ -1,10 +1,14 @@
 <script setup>
+import { ref } from "vue";
+
 const props = defineProps({
   id: String,
   label: String,
   type: String,
   place: String,
   ico: String,
+  list: JSON,
+  value: String,
 });
 
 function preview() {
@@ -64,7 +68,20 @@ function togglePasswordIcon() {
         class="form-control text-white fs-5"
         :placeholder="place"
         :id="id"
+        list="items"
+        :value="value"
+        @input="$emit('update:value', $event.target.value)"
       />
+      <datalist v-if="list" id="items">
+        <option
+          v-for="item in list.categories"
+          :key="item.id"
+          :value="item.name"
+        >
+          {{ item.name }}
+        </option>
+      </datalist>
+
       <label v-if="type == 'file'" class="lb-file" :for="id">
         <i class="bi bi-plus"></i>
         <div class="overflow">

@@ -2,27 +2,61 @@
 import isMobile from "../helpers/isMobile";
 import ButtonGroupThree from "../layouts/ButtonGroupThree.vue";
 import Gallery from "../layouts/Gallery.vue";
+import { ref } from "vue";
+import api from "../helpers/ApiConection";
 
-const props = defineProps({
-  news: Array,
-});
+const news = ref([]);
 
 const buttons = [
   {
-    msg: "Para ti",
-    class: "btn-red",
-  },
-  {
     msg: "Popular",
-    class: "btn-border",
+    class: "btn-red",
   },
   {
     msg: "Reciente",
     class: "btn-border",
   },
+  {
+    msg: "Para ti",
+    class: "btn-border",
+  },
 ];
+
+const filtro = ref("Para ti");
+api.popular().then((res) => {
+  news.value = res.data.all;
+});
+
 function buttonsCliked(index) {
-  console.log("boton presionado " + index);
+  switch (index) {
+    case 0:
+      news.value = [];
+      api.popular().then((res) => {
+        news.value = res.data.all;
+      });
+      filtro.value = "Popular";
+      break;
+    case 1:
+      news.value = [];
+      api.reciente().then((res) => {
+        news.value = res.data.all;
+      });
+      filtro.value = "Reciente";
+      break;
+    case 2:
+      news.value = [];
+      api.parati().then((res) => {
+        res.data.paraTi.forEach((element) => {
+          element.forEach((elemen) => {
+            news.value.push(elemen);
+          });
+        });
+      });
+      filtro.value = "Para ti";
+      break;
+    default:
+      break;
+  }
 }
 </script>
 

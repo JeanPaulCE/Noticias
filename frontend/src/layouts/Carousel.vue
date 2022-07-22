@@ -1,24 +1,22 @@
 <script setup>
-import { computed } from "vue";
+import { computed, onBeforeMount, onMounted, ref, render } from "vue";
 import isMobile from "../helpers/isMobile";
+import api from "../helpers/ApiConection";
 
-const props = defineProps({
-  news: Array,
-});
+const news = ref([]);
 
-const popularNews = computed(() => {
-  const popularNews = props.news;
+api.popular().then((res) => {
+  let popularNews = res.data.all;
   popularNews.sort((itemOne, itemTwo) => {
-    if (itemOne.likes < itemTwo.likes) {
+    if (itemOne.likes_count < itemTwo.likes_count) {
       return 1;
     }
-    if (itemTwo.likes > itemOne.likes) {
+    if (itemTwo.likes_count > itemOne.likes_count) {
       return -1;
     }
     return 0;
   });
-
-  return popularNews.slice(0, 3);
+  news.value = popularNews.slice(0, 3);
 });
 </script>
 
@@ -26,12 +24,16 @@ const popularNews = computed(() => {
   <div id="carousel" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
       <div
-        v-for="(item, index) in popularNews"
+        v-for="(item, index) in news"
         :class="{ active: index == 0 }"
         class="carousel-item"
       >
         <div class="position-absolute w-100 h-100 filter"></div>
-        <img :src="item.image" :alt="item.title" class="w-100" />
+        <img
+          :src="api.api_url() + item.image"
+          :alt="item.title"
+          class="w-100"
+        />
         <div class="position-absolute text-content">
           <h2 class="fs-2 text-light">{{ item.title }}</h2>
           <p class="fs-4 text-light opacity-75">

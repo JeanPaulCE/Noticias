@@ -3,30 +3,10 @@ import { onMounted, ref } from "vue";
 import isMobile from "../helpers/isMobile";
 import lateralScroll from "../helpers/lateralScroll";
 import uniq from "../helpers/unique";
-import fetchAPI from "../helpers/fetchAPI";
+import api from "../helpers/ApiConection";
+import apiConection from "../helpers/ApiConection";
 
-const categorias2 = ref([]);
-
-const categorias = ref([
-  "Todas",
-  "Acción",
-  "Aventura",
-  "Aventura Gráfica",
-  "Consola Virtual",
-  "Deportes",
-  "Estrategia",
-  "Lucha",
-  "Multijugador Online",
-  "Musical",
-  "Plataformas",
-  "Puzzle",
-  "Realidad Virtual",
-  "Rol",
-  "Shooter",
-  "Simulación",
-  "Velocidad",
-  "Xbox Live Arcade",
-]);
+const categorias = ref([]);
 
 const filtro = ref([]);
 const categoriasVisibles = ref([]);
@@ -36,7 +16,7 @@ const t_categorias = ref(null);
 function Crearfiltro(params) {
   let lista = [];
   categorias.value.forEach((element) => {
-    lista.push(element.charAt(0));
+    lista.push(element.name.charAt(0));
   });
   lista.sort();
   filtro.value = uniq(lista);
@@ -44,28 +24,20 @@ function Crearfiltro(params) {
 
 function filtrar(letra) {
   categoriasVisibles.value = categorias.value.filter(function (item) {
-    if (item.charAt(0).toUpperCase() == letra.toUpperCase()) {
+    if (item.name.charAt(0).toUpperCase() == letra.toUpperCase()) {
       return true;
     } else return false;
   });
 }
 
 onMounted(() => {
-  /*fetchAPI("/news")
-  .then((data) => {
-
-    for(const i=ref(0); i.value<data.length; i.value++){
-      //console.log(i.value);
-      categorias2.value.push(data[i.value].category);
-    }
-
-    console.log(categorias2.value);
-  });*/
-
-  Crearfiltro();
-  lateralScroll(t_filtro.value);
-  lateralScroll(t_categorias.value);
-  filtrar(filtro.value[0]);
+  api.categories().then((data) => {
+    categorias.value = data.data.categorias;
+    Crearfiltro();
+    lateralScroll(t_filtro.value);
+    lateralScroll(t_categorias.value);
+    filtrar(filtro.value[0]);
+  });
 });
 </script>
 
@@ -86,10 +58,10 @@ onMounted(() => {
       <button
         v-for="cat in categoriasVisibles"
         v-on:click="$emit('selectCategory', cat)"
-        :id="cat"
+        :id="cat.id"
         class="item-categoria mx-2"
       >
-        {{ cat }}
+        {{ cat.name }}
       </button>
     </div>
   </div>
