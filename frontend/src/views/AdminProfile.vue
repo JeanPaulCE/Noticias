@@ -20,7 +20,7 @@ const buttons = [
     class: "btn-border",
     url: "/publicacion",
   },
-];
+];.
 </script>
 
 <template>
